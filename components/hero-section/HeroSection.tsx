@@ -6,7 +6,7 @@ export function HeroSection() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        {/*<div className={styles.artwork}><Artwork/></div>*/}
+        <div className={styles.artwork}></div>
 
         <div className={styles.artworkContainer}></div>
         <div className={styles.heroTextContainer}>
