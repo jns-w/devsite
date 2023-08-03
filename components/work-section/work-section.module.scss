@@ -9,4 +9,21 @@
     align-items: center;
     height: 600px;
     padding: 20px 30px;
+
+    color: var(--theme-text-color);
+
+    h1 {
+    }
+}
+
+.ProjectsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+
+.Card {
+    display: flex;
+    border: solid grey 1px;
 }
