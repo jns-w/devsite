@@ -13,17 +13,19 @@ export function BioSection() {
           <div className={styles.bio}>
             <h2 className={archivo.className}>Jonas Wong</h2>
             <text className={archivo.className}>
-              Based in Singapore 🇸🇬. Passionate about
+              Based in Singapore 🇸🇬.
             </text>
+
+            <div className={`${styles.buttonsGroup} ${archivo.className}`}>
+              <motion.button>Contact me</motion.button>
+              <motion.button>Portfolio</motion.button>
+            </div>
           </div>
         </div>
-        <div className={`${styles.buttonsGroup} ${archivo.className}`}>
-          <motion.button
-            whileHover={{scale: 1.1}}
-            transition={{type: "spring", stiffness: 600, damping: 20}}
-          >Contact me
-          </motion.button>
-          <motion.button>Portfolio</motion.button>
+
+
+        <div className={styles.description}>
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
         </div>
       </div>
     </div>

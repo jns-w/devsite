@@ -1,29 +1,111 @@
+@import "@/styles/main";
+
 .wrapper {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 600px;
-    padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 600px;
+  padding: 20px 30px;
 
+  color: var(--theme-text-color);
+
+  //h1 {
+  //  font-size: 48px;
+  //  font-weight: 700;
+  //  letter-spacing: -1.5px;
+  //  line-height: 1;
+  //  color: var(--theme-text-color);
+  //  margin: 0 10px;
+  //  padding: 0;
+  //}
+}
+
+.headerContainer {
+  @include section-header;
+}
+
+.projectsGrid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 28px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+
+.card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  //border: red solid 1px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
     color: var(--theme-text-color);
+    margin: 10px 0 0 0;
+    padding: 0;
+  }
 
-    h1 {
+  p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--theme-mild-text-color);
+    margin: 0;
+    padding: 0;
+  }
+
+
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  background: var(--theme-mild-backing);
+
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 3px 0 10px 0;
+
+    span {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--theme-text-color);
+        background-color: var(--theme-mild-backing);
+        padding: 5px 10px;
+        border-radius: 14px;
     }
 }
 
-.ProjectsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.buttons {
+  display: flex;
+  margin: 10px 0 0 0;
+  gap: 10px;
 
-}
-
-
-.Card {
-    display: flex;
-    border: solid grey 1px;
+  button {
+    @include button;
+    //font-size: 15px;
+    //border: 1px solid black;
+    //border-radius: 6px;
+    //padding: 10px 20px;
+  }
 }

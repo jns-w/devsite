@@ -1,13 +1,15 @@
 $theme-map-light: (
         $--theme-bg: #fff,
         $--theme-text-color: #394c4f,
-        $--theme-mild-backing: #dedede,
+        $--theme-mild-text-color: #707070,
+        $--theme-mild-backing: #eaeaea,
         $--theme-accent: #b05444
 );
 
 $theme-map-dark: (
         $--theme-bg: #1c1c1c,
         $--theme-text-color: #fff,
-        $--theme-mild-backing: #3f3f3f,
+        $--theme-mild-text-color: #8d927e,
+        $--theme-mild-backing: #282828,
         $--theme-accent: #ec309b
 )
