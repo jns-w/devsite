@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 600px;
+  min-height: 600px;
   padding: 20px 30px;
 
   color: var(--theme-text-color);
@@ -83,7 +83,7 @@
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 4px 6px;
     margin: 3px 0 10px 0;
 
     span {
@@ -102,10 +102,9 @@
   gap: 10px;
 
   button {
-    @include button;
-    //font-size: 15px;
-    //border: 1px solid black;
-    //border-radius: 6px;
-    //padding: 10px 20px;
+    @include button-dark;
+    svg {
+
+    }
   }
 }
