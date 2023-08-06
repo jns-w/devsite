@@ -43,7 +43,7 @@ export function PortfolioSection() {
     {
       title: "Blocks",
       description: "Full-stack timer app that helps you focus and track productive hours. Multi-device support with real-time sync.",
-      tags: ["Typescript", "Nodejs", "React", "Styled-components", "MongoDB", "SocketIO"],
+      tags: ["Typescript", "Nodejs", "React", "Styled-components", "MongoDB", "SocketIO", "Auth"],
       links: [
         {
           type: "Demo",
