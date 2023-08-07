@@ -33,7 +33,7 @@
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 28px;
+  grid-gap: 25px 20px;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -41,16 +41,26 @@
 
   @media (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 5px;
   }
-
 }
 
+.cardWrapper {
+  position: relative;
+}
 
 .card {
   display: flex;
+  position: relative;
   width: 100%;
+  background: var(--theme-card-bg);
   flex-direction: column;
-  //border: red solid 1px;
+  justify-content: space-between;
+  border-radius: 10px;
+  min-height: 350px;
+  cursor: pointer;
+  padding: 25px 20px;
+  border: 1px solid transparent;
 
   h2 {
     font-size: 18px;
@@ -68,6 +78,11 @@
     padding: 0;
   }
 
+  &.expanded {
+    position: absolute;
+    border: 1px solid var(--theme-text-color);
+  }
+
 
 }
 
@@ -81,19 +96,19 @@
 }
 
 .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 6px;
-    margin: 3px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 3px 0 10px 0;
 
-    span {
-        font-size: 12px;
-        font-weight: 400;
-        color: var(--theme-text-color);
-        background-color: var(--theme-mild-backing);
-        padding: 5px 10px;
-        border-radius: 14px;
-    }
+  span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--theme-text-color);
+    background-color: var(--theme-mild-backing);
+    padding: 5px 10px;
+    border-radius: 14px;
+  }
 }
 
 .buttons {
@@ -107,7 +122,7 @@
 }
 
 .icon {
-    width: 18px;
-    height: 20px;
-    fill: var(--theme-text-color);
+  width: 18px;
+  height: 20px;
+  fill: var(--theme-text-color);
 }
