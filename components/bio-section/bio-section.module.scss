@@ -67,6 +67,12 @@ $photo-size: 100px;
   button {
     @include button-dark-lg();
   }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--theme-text-color);
+  }
 }
 
 .description {

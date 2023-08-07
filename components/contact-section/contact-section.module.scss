@@ -1,6 +1,32 @@
 @import "@/styles/main";
-.wrapper{}
-.container{}
+
+.wrapper {
+  @include section-wrapper;
+}
+
 .headerContainer {
   @include section-header;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 50px auto;
+  max-width: 200px;
+}
+
+.button {
+  @include button-dark-lg;
+  width: 100%;
+  justify-content: center;
+}
+
+.icon {
+    width: 22px;
+    fill: var(--theme-focal-text-color);
+    color: var(--theme-focal-text-color);
+    cursor: pointer;
 }

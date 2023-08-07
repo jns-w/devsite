@@ -1,13 +1,8 @@
 "use client"
 import styles from './hero-section.module.scss';
 import {archivo} from "@/styles/fonts";
-import * as THREE from "three";
-import {Canvas, useFrame} from "@react-three/fiber";
-import {OrbitControls, useGLTF} from "@react-three/drei";
-import {Suspense, useEffect} from "react";
-import {Man} from './Man'
-import {Leva, useControls} from "leva";
-import {Perf} from "r3f-perf";
+import {Canvas} from "@react-three/fiber";
+import {Leva} from "leva";
 import Room from "@/components/hero-section/Room";
 
 export function HeroSection() {
@@ -32,16 +27,16 @@ function Artwork() {
           <span>Junior Software Developer.</span>
         </h1>
       </div>
-      <Canvas
-        camera={{
-          fov: 50,
-          position: [1, 1.3, -0.2],
-          zoom: 1,
-      }}
-      >
-        <Leva hidden={true}/>
-        <Room/>
-      </Canvas>
+      {/*<Canvas*/}
+      {/*  camera={{*/}
+      {/*    fov: 50,*/}
+      {/*    position: [1, 1.3, -0.2],*/}
+      {/*    zoom: 1,*/}
+      {/*}}*/}
+      {/*>*/}
+      {/*  <Leva hidden={true}/>*/}
+      {/*  <Room/>*/}
+      {/*</Canvas>*/}
     </div>
   )
 }

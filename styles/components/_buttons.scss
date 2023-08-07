@@ -10,8 +10,8 @@
 
 @mixin button-dark {
   @include button;
-  background-color: #2c2c2c;
-  color: #eaeaea;
+  background-color: var(--theme-focal);
+  color: var(--theme-focal-text-color);
   border: none;
 
 &:hover {

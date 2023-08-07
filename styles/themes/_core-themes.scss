@@ -3,7 +3,11 @@ $theme-map-light: (
         $--theme-text-color: #394c4f,
         $--theme-mild-text-color: #707070,
         $--theme-mild-backing: #eaeaea,
-        $--theme-accent: #b05444
+        $--theme-accent: #b05444,
+        $--theme-focal: #2c2c2c,
+        $--theme-focal-text-color: #eaeaea,
+        $--theme-mild-focal: #5e5e5e,
+        $--theme-mild-focal-text-color: #f6f6f6
 );
 
 $theme-map-dark: (
@@ -11,5 +15,9 @@ $theme-map-dark: (
         $--theme-text-color: #f1f1f1,
         $--theme-mild-text-color: #8a8a8a,
         $--theme-mild-backing: #333333,
-        $--theme-accent: #098efd
+        $--theme-accent: #078dff,
+        $--theme-focal: #0d73c9,
+        $--theme-focal-text-color: #eeeeee,
+        $--theme-mild-focal: #afafaf,
+        $--theme-mild-focal-text-color: #181818
 )

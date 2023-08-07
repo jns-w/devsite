@@ -1,16 +1,18 @@
 "use client"
-
 import styles from './bio-section.module.scss';
 import {archivo} from "@/styles/fonts";
 import {motion} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTurnDown} from "@fortawesome/free-solid-svg-icons";
+import Icon from "@mdi/react";
+import {mdiArrowDownRightBold} from "@mdi/js";
 
 export function BioSection() {
 
   const buttons = [
     {
-      text: "Portfolio"
+      text: "Portfolio",
+      href: "#Portfolio"
     },
     {
       text: "Contact",
@@ -21,11 +23,18 @@ export function BioSection() {
   ]
 
   const button = {
-    normal: {},
+    normal: {
+      backgroundColor: "var(--theme-focal)"
+    },
     hovered: {
       width: "95px",
       backgroundColor: "var(--theme-accent)",
-      transition: {type: "spring", stiffness: 500, damping: 20, duration: 0.1}
+      transition: {
+        type: "spring",
+        stiffness: 500,
+        damping: 20,
+        duration: 0.1
+      }
     }
   }
 
@@ -39,12 +48,17 @@ export function BioSection() {
       opacity: 1,
       rotate: 0,
       x: 0,
-      transition: {type: "spring", stiffness: 500, damping: 10, duration: 0.3}
+      transition: {
+        type: "spring",
+        stiffness: 500,
+        damping: 10,
+        duration: 0.3
+      }
     }
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="Bio">
       <div className={styles.container}>
         <div className={styles.bioGroup}>
           <div className={styles.photo}/>
@@ -56,9 +70,7 @@ export function BioSection() {
               Based in Singapore 🇸🇬.
             </text>
 
-
           </div>
-
 
         </div>
 
@@ -68,7 +80,9 @@ export function BioSection() {
               return <motion.button
                 style={{position: "relative"}}
                 key={el.text}
-                animate={{backgroundColor: "#2c2c2c"}}
+                animate={{
+                  backgroundColor: "var(--theme-focal)",
+                }}
                 variants={button}
                 initial="normal"
                 whileHover="hovered"
@@ -81,11 +95,8 @@ export function BioSection() {
                   }}
                   variants={buttonIcon}
                 >
-                  <FontAwesomeIcon
-                    icon={faTurnDown}
-                  />
+                  <Icon className={styles.icon} path={mdiArrowDownRightBold} />
                 </motion.div>
-
               </motion.button>
             })
           }

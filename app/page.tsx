@@ -4,11 +4,12 @@ import {Header} from "@/shared-components";
 import {HeroSection, BioSection, PortfolioSection, ContactSection} from "@/components";
 
 export default function Home() {
+
   return (
     <main className={styles.main}>
       <HeroSection/>
-      <BioSection/>
-      <PortfolioSection/>
+      <BioSection />
+      <PortfolioSection />
       <ContactSection/>
     </main>
   )

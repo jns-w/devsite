@@ -103,8 +103,11 @@
 
   button {
     @include button-dark;
-    svg {
-
-    }
   }
+}
+
+.icon {
+    width: 18px;
+    height: 20px;
+    fill: var(--theme-text-color);
 }

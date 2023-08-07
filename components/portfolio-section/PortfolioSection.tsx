@@ -4,6 +4,8 @@ import {motion} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEye} from "@fortawesome/free-regular-svg-icons";
 import {faArrowUpRightFromSquare, faCode} from "@fortawesome/free-solid-svg-icons";
+import Icon from "@mdi/react";
+import {mdiEyeOutline, mdiLinkVariant, mdiOpenInNew, mdiXml} from "@mdi/js";
 
 type Link = {
   type: "Demo" | "Code" | "Live",
@@ -108,6 +110,29 @@ function Card(props: CardProps) {
     }
   ]
 
+  const buttonVariant = {
+    default: {
+      backgroundColor: "var(--theme-mild-focal)",
+      color: "var(--theme-mild-focal-text-color)",
+      transition: {type: "spring", stiffness: 500, damping: 70, duration: .7}
+    },
+    hovered: {
+      backgroundColor: "var(--theme-accent)",
+      transition: {type: "spring", stiffness: 500, damping: 70, duration: .7}
+    },
+  }
+
+  const iconVariant = {
+    default: {
+      rotateZ: 0,
+      transition: {type: "spring", stiffness: 500, damping: 70, duration: .7}
+    },
+    hovered: {
+      rotateZ: 360,
+      transition: {type: "spring", stiffness: 500, damping: 70, duration: .7}
+    },
+  }
+
   return (
     <motion.div
       className={styles.card}
@@ -134,11 +159,14 @@ function Card(props: CardProps) {
           props.links ?
             props.links.map(el => {
               if (!el.href) return;
-              return <motion.button key={el.type} whileHover="hovered">
+              return <motion.button
+                key={el.type}
+                animate="default"
+                whileHover="hovered"
+                variants={buttonVariant}
+              >
                 <motion.div
-                  variants={{
-                    hovered: {rotateZ: 360, transition: {type: "spring", stiffness: 500, damping: 70, duration: .7}},
-                  }}
+                  variants={iconVariant}
                 >
                   {el.type === "Demo" &&
                       <FontAwesomeIcon icon={faEye}/>}
@@ -153,11 +181,13 @@ function Card(props: CardProps) {
             :
             placeholderLinks.map(el => {
               if (!el.href) return;
-             return <motion.button key={el.type} whileHover="hovered">
+              return <motion.button
+                key={el.type}
+                animate="default"
+                whileHover="hovered"
+                variants={buttonVariant}>
                 <motion.div
-                  variants={{
-                    hovered: {rotateZ: 360, transition: {type: "spring", stiffness: 500, damping: 100, duration: .7}},
-                  }}
+                  variants={iconVariant}
                 >
                   {el.type === "Demo" &&
                       <FontAwesomeIcon icon={faEye}/>}
