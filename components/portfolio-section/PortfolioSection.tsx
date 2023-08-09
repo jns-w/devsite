@@ -73,11 +73,10 @@ export function PortfolioSection() {
 
 
 
-        <motion.div className={styles.projectsGrid} layout>
+        <motion.div className={styles.projectsGrid}>
           {portfolios.map(el => (
             <Card key={el.title} title={el.title} description={el.description} tags={el.tags} links={el.links}/>
           ))}
-
           <Card title={"title"}
                 description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}/>
         </motion.div>
