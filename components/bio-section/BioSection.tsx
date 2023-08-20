@@ -2,8 +2,6 @@
 import styles from './bio-section.module.scss';
 import {archivo} from "@/styles/fonts";
 import {motion} from "framer-motion";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTurnDown} from "@fortawesome/free-solid-svg-icons";
 import Icon from "@mdi/react";
 import {mdiArrowDownRightBold} from "@mdi/js";
 
@@ -61,8 +59,17 @@ export function BioSection() {
     <div className={styles.wrapper} id="Bio">
       <div className={styles.container}>
         <div className={styles.bioGroup}>
-          <div className={styles.photo}/>
-          <div className={styles.bio}>
+          <motion.div className={styles.photo}
+                      initial={{opacity: 0, x: -10}}
+                      whileInView={{
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                          duration: 0.7,
+                          delay: 0.2,
+                        }
+                      }}/>
+          <motion.div className={styles.bio}>
 
             <h2 className={archivo.className}>Jonas Wong</h2>
 
@@ -70,7 +77,7 @@ export function BioSection() {
               Based in Singapore 🇸🇬.
             </text>
 
-          </div>
+          </motion.div>
 
         </div>
 
@@ -95,7 +102,7 @@ export function BioSection() {
                   }}
                   variants={buttonIcon}
                 >
-                  <Icon className={styles.icon} path={mdiArrowDownRightBold} />
+                  <Icon className={styles.icon} path={mdiArrowDownRightBold}/>
                 </motion.div>
               </motion.button>
             })

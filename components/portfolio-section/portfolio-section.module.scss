@@ -60,8 +60,8 @@
   min-height: 350px;
   cursor: pointer;
   padding: 25px 20px;
-  border: 1px solid transparent;
-
+  border: var(--theme-card-border);
+  boxShadow: "0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 0px 4px hsl(0deg 0% 0% / 0.075), 0 0px 8px hsl(0deg 0% 0% / 0.075)",
   h2 {
     font-size: 18px;
     font-weight: 700;
@@ -80,7 +80,7 @@
 
   &.expanded {
     position: absolute;
-    border: 1px solid var(--theme-text-color);
+    //border: 1px solid var(--theme-text-color);
   }
 
 

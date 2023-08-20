@@ -1,10 +1,12 @@
 "use client"
 import styles from './portfolio-section.module.scss';
-import {motion} from "framer-motion";
+import {motion, Variants} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEye} from "@fortawesome/free-regular-svg-icons";
 import {faArrowUpRightFromSquare, faCode} from "@fortawesome/free-solid-svg-icons";
 import {useRef, useState} from "react";
+import {useAtom} from "jotai";
+import {modalAtom} from "@/atoms/ui";
 
 type Link = {
   type: "Demo" | "Code" | "Live",
@@ -14,6 +16,7 @@ type Link = {
 type Portfolio = {
   title: string,
   description: string,
+  writeup?: string,
   tags: string[],
   links: Link[]
 }
@@ -25,6 +28,7 @@ export function PortfolioSection() {
     {
       title: "NotGPT",
       description: "Full-stack search engine experiment. Exploring in-memory auto-completion database (trie) in rust, and plenty of fun animations on a react frontend.",
+      writeup: "--",
       tags: ["Typescript", "Rust", "React", "Sass", "Actix"],
       links: [
         {
@@ -45,6 +49,7 @@ export function PortfolioSection() {
     {
       title: "Blocks",
       description: "Full-stack timer app that helps you focus and track productive hours. Multi-device support with real-time sync.",
+      writeup: "--",
       tags: ["Typescript", "Nodejs", "React", "Styled-components", "MongoDB", "SocketIO", "Auth"],
       links: [
         {
@@ -70,9 +75,6 @@ export function PortfolioSection() {
           <h1 id="Portfolio">Portfolio</h1>
           <p>coding is a passion of mine and this is a collection of my projects. Have a look.</p>
         </div>
-
-
-
         <motion.div className={styles.projectsGrid}>
           {portfolios.map(el => (
             <Card key={el.title} title={el.title} description={el.description} tags={el.tags} links={el.links}/>
@@ -96,6 +98,7 @@ type CardProps = {
 function Card(props: CardProps) {
 
   const [isExpanded, setIsExpanded] = useState(false)
+  const [modalOpen, setModalOpen] = useAtom(modalAtom)
 
   function handleExpand() {
     setIsExpanded(!isExpanded)
@@ -119,9 +122,8 @@ function Card(props: CardProps) {
     }
   ]
 
-  const cardVariant = {
+  const cardVariant: Variants = {
     default: {
-      border: "1px solid transparent",
       boxShadow: "0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 0px 4px hsl(0deg 0% 0% / 0.075), 0 0px 8px hsl(0deg 0% 0% / 0.075)",
       scale: 1,
       transition: {
@@ -144,7 +146,7 @@ function Card(props: CardProps) {
   }
 
 
-  const buttonVariant = {
+  const buttonVariant: Variants = {
     default: {
       backgroundColor: "var(--theme-mild-focal)",
       color: "var(--theme-mild-focal-text-color)",
@@ -156,7 +158,7 @@ function Card(props: CardProps) {
     },
   }
 
-  const iconVariant = {
+  const iconVariant: Variants = {
     default: {
       rotateZ: 0,
       transition: {type: "spring", stiffness: 500, damping: 70, duration: .7}
@@ -170,7 +172,7 @@ function Card(props: CardProps) {
   return (
     <motion.div
       className={styles.cardWrapper}
-      onClick={() => handleExpand()}
+      onClick={() => setModalOpen(true)}
       ref={ref}
       layout
     >
