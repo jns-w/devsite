@@ -1,7 +1,7 @@
 @import "@/styles/main";
 
 .wrapper {
-  margin-top: 150px;
+  padding-top: 120px;
 }
 
 .container {
@@ -33,7 +33,7 @@
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 25px 20px;
+  grid-gap: 25px 15px;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -57,13 +57,15 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 10px;
-  min-height: 350px;
+  height: 450px;
+  gap: 10px;
   cursor: pointer;
   padding: 25px 20px;
   border: var(--theme-card-border);
-  boxShadow: "0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 0px 4px hsl(0deg 0% 0% / 0.075), 0 0px 8px hsl(0deg 0% 0% / 0.075)",
+  boxShadow: "0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 0px 4px hsl(0deg 0% 0% / 0.075), 0 0px 8px hsl(0deg 0% 0% / 0.075)";
+
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--theme-text-color);
     margin: 10px 0 0 0;
@@ -88,8 +90,8 @@
 
 .thumbnail {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 250px;
+  //object-fit: cover;
   border-radius: 15px;
   background: var(--theme-mild-backing);
 
@@ -97,7 +99,9 @@
 
 .tags {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
+  height: 80px;
   gap: 4px 6px;
   margin: 3px 0 10px 0;
 
@@ -109,6 +113,12 @@
     padding: 5px 10px;
     border-radius: 14px;
   }
+}
+
+.descriptionContainer {
+  display: flex;
+  height: 150px;
+  overflow: auto;
 }
 
 .buttons {

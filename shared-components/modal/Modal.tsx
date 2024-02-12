@@ -53,10 +53,8 @@ export default function Modal() {
           scale: 1
         }}
         transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 20,
-          duration: 0.3
+          ease: [.25, .5, .35, 1],
+          duration: .3,
         }}
         exit={{
           transition: {type: "ease", duration: 0.2},

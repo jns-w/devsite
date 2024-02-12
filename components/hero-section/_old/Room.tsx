@@ -1,10 +1,10 @@
 import {Perf} from "r3f-perf";
 import {OrbitControls} from "@react-three/drei";
 import {Suspense, useRef} from "react";
-import {Man} from "@/components/hero-section/Man";
+import {Man} from "@/components/hero-section/_old/Man";
 import {useControls} from "leva";
-import {Desk} from "@/components/hero-section/Desk";
-import {Chair} from "@/components/hero-section/Chair";
+import {Desk} from "@/components/hero-section/_old/Desk";
+import {Chair} from "@/components/hero-section/_old/Chair";
 
 export default function Room() {
   const orbit = useRef()

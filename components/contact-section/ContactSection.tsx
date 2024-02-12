@@ -10,7 +10,7 @@ export function ContactSection() {
     {
       name: "Mail",
       icon: mdiEmailOutline,
-      url: "mailto:",
+      url: "mailto:jns.w@icloud.com",
     },
     {
       name: "LinkedIn",
@@ -20,7 +20,7 @@ export function ContactSection() {
     {
       name: "Github",
       icon: mdiGithub,
-      url: "-",
+      url: "https://github.com/jns-w",
     },
     {
       name: "Twitter",
@@ -30,8 +30,8 @@ export function ContactSection() {
   ]
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.headerContainer} id="Contact">
+    <div className={styles.wrapper} id="Contact">
+      <div className={styles.headerContainer}>
         <h1>Let&apos;s connect</h1>
         <p>Feel free to reach out to me on any of the following platforms.</p>
 
@@ -39,7 +39,9 @@ export function ContactSection() {
       <div className={styles.buttonsContainer}>
         {
           links.map(el => (
-            <motion.button
+            <motion.a
+              href={el.url}
+              rel="noopener noreferrer"
               key={el.name}
               className={styles.button}
               animate={{
@@ -49,9 +51,9 @@ export function ContactSection() {
                 backgroundColor: "var(--theme-accent)",
               }}
             >
-              <Icon className={styles.icon} path={el.icon} />
+              <Icon className={styles.icon} path={el.icon}/>
               {el.name}
-            </motion.button>
+            </motion.a>
           ))
         }
       </div>

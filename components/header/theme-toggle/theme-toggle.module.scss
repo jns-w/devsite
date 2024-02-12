@@ -35,10 +35,11 @@ $height: calc($handle-size + $padding * 2);
 
 .icon {
   position: absolute;
-  top: 8px;
+  //top: 8px;
   z-index: 1;
   width: 16px;
-  color: #e8ab11;
+  //color: #e8ab11;
+  color: var(--theme-text-color);
   filter: blur(0.1);
   rotate: 0.01deg;
 

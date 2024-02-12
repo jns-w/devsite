@@ -4,11 +4,14 @@ import styles from './header.module.scss';
 import {archivo} from "@/styles/fonts";
 import {ThemeToggle} from "./theme-toggle/ThemeToggle"
 import {useState} from "react";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import {mdiEmailOutline, mdiGithub, mdiLinkedin} from "@mdi/js";
 import Icon from "@mdi/react";
+import Link from 'next/link';
+import {useParams, usePathname} from "next/navigation";
 
 export function Header() {
+  const path = usePathname()
   const navLinks = [
     {label: "Portfolio", href: "#Portfolio"},
     {label: "Bio", href: "#Bio"},
@@ -18,15 +21,18 @@ export function Header() {
 
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <h2 className={archivo.className}>
+          <Link href={path === "/" ? "#Top" : "/"} className={archivo.className}>
             JNS-W
-          </h2>
+          </Link>
         </div>
-        <nav className={styles.navigation}>
-          <ul className={`${styles.navigation} ${archivo.className}`}>
+
+        <nav className={styles.navigation}
+        >
+          <motion.ul className={`${styles.navigation} ${archivo.className}`}
+          >
             {
               navLinks.map((item, index) => (
                 <li key={item.label}
@@ -34,38 +40,74 @@ export function Header() {
                     onMouseOut={() => setHoveredOn(-1)}
                 >
                   <a
-                    href={item.href}
+                    href={path === "/" ? item.href : "/" + item.href}
                   >
                     {item.label}
 
                   </a>
-
-                  {index === hoveredOn ? (
-                      <motion.div
-                        className={styles.highlight}
-                        layoutId={"highlight"}
-                        animate={{opacity: 0.7, scale: 1}}
-                        initial={{opacity: 0.2, scale: 0.7}}
-                        exit={{opacity: 0}}
-                        transition={{type: "spring", stiffness: 450, damping: 30, duration: 0.2}}
-                      />)
-                    : null}
+                  <AnimatePresence>
+                    {index === hoveredOn ? (
+                        <motion.div
+                          key={item.label}
+                          layoutId={"underline"}
+                          className={styles.highlight}
+                          initial={{
+                            opacity: 0.2,
+                            scaleX: 0.5,
+                          }}
+                          animate={{
+                            opacity: 0.7,
+                            scaleX: 1,
+                            y: 0,
+                          }}
+                          transition={{
+                            layout: {
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 25,
+                              duration: 0.2,
+                            },
+                          }
+                          }
+                          exit={{
+                            opacity: 0,
+                            scaleX: 0,
+                            transition: {
+                              duration: .2,
+                              ease: "easeOut"
+                            }
+                          }}
+                        />)
+                      : null
+                    }
+                  </AnimatePresence>
                 </li>
               ))
             }
-          </ul>
+          </motion.ul>
         </nav>
 
 
         <div className={styles.right}>
-          <Icon className={styles.brands} path={mdiGithub}/>
-          <Icon className={styles.brands} path={mdiLinkedin}/>
-          <Icon className={styles.brands} path={mdiEmailOutline}/>
+          <a
+           target="_blank" href="https://github.com/jns-w" rel="noopener noreferrer"
+          >
+            <Icon className={styles.brands} path={mdiGithub}/>
+          </a>
+          <a
+            target="_blank" href="" rel="noopener noreferrer"
+          >
+
+            <Icon className={styles.brands} path={mdiLinkedin}/>
+          </a>
+          <a href="mailto:jns.w@icloud.com" rel="noopener noreferrer">
+            <Icon className={styles.brands} path={mdiEmailOutline}/>
+          </a>
           <ThemeToggle/>
         </div>
       </div>
       <div className={styles.background}></div>
-    </div>
+    </motion.div>
   )
 
 }

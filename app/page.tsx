@@ -1,8 +1,8 @@
 "use client"
 import styles from './page.module.scss'
-import {HeroSection, BioSection, PortfolioSection, ContactSection} from "@/components";
-import {useEventListener} from "usehooks-ts";
+import {BioSection, ContactSection, HeroSection, PortfolioSection} from "@/components";
 import {useRef} from "react";
+import {motion} from 'framer-motion';
 
 export default function Home() {
 
@@ -10,12 +10,21 @@ export default function Home() {
   const portfolioRef = useRef(null)
   const contactRef = useRef(null)
 
- function scrollTo(section: string) {
-
- }
-
   return (
-    <main className={styles.main}>
+    <motion.main
+      id="Top"
+      className={styles.main}
+      initial={{opacity: 0}}
+      animate={{
+        opacity: 1,
+        transition: {
+          opacity: {
+            duration: 0.2,
+            ease: "easeIn"
+          }
+        }
+      }}
+    >
       <HeroSection/>
       <div ref={bioRef}/>
       <BioSection/>
@@ -23,6 +32,6 @@ export default function Home() {
       <PortfolioSection/>
       <div ref={contactRef}/>
       <ContactSection/>
-    </main>
+    </motion.main>
   )
 }

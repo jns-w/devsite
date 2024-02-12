@@ -2,6 +2,8 @@
 
 .wrapper {
   @include section-wrapper;
+  padding-top: 200px;
+  margin-bottom: 200px;
 }
 
 .headerContainer {
@@ -22,6 +24,8 @@
   @include button-dark-lg;
   width: 100%;
   justify-content: center;
+
+  text-decoration: none;
 }
 
 .icon {

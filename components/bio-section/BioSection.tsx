@@ -4,8 +4,11 @@ import {archivo} from "@/styles/fonts";
 import {motion} from "framer-motion";
 import Icon from "@mdi/react";
 import {mdiArrowDownRightBold} from "@mdi/js";
+import {useRouter} from "next/navigation";
+import Link from 'next/link';
 
 export function BioSection() {
+  const router = useRouter()
 
   const buttons = [
     {
@@ -14,9 +17,11 @@ export function BioSection() {
     },
     {
       text: "Contact",
+      href: "#Contact"
     },
     {
-      text: "Resume"
+      text: "Resume",
+      href: "/resume"
     }
   ]
 
@@ -61,6 +66,7 @@ export function BioSection() {
         <div className={styles.bioGroup}>
           <motion.div className={styles.photo}
                       initial={{opacity: 0, x: -10}}
+                      viewport={{once: true}}
                       whileInView={{
                         opacity: 1,
                         x: 0,
@@ -93,6 +99,7 @@ export function BioSection() {
                 variants={button}
                 initial="normal"
                 whileHover="hovered"
+                onClick={() => router.push(el.href)}
               >
                 {el.text}
                 <motion.div
@@ -110,8 +117,7 @@ export function BioSection() {
         </div>
 
         <div className={styles.description}>
-          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam.
+         I’m a budding software developer who has been honing my craft part-time, looking to turn pro. Check out my <Link href="#Portfolio">portfolio</Link> to see what I can do. And hit me up at through any of these <Link href="#Contact">channels</Link>!
         </div>
       </div>
     </div>

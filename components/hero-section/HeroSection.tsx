@@ -2,10 +2,8 @@
 import styles from './hero-section.module.scss';
 import {archivo} from "@/styles/fonts";
 import {motion} from "framer-motion";
-import {Canvas} from "@react-three/fiber";
-import {Leva} from "leva";
-import Room from "@/components/hero-section/Room";
-import {useEffect, useRef} from "react";
+import {lazy, Suspense, useRef} from "react";
+import GpgpuScene from "@/components/hero-section/particles/gpgpu/Gpgpu";
 
 export function HeroSection() {
   return (
@@ -19,37 +17,66 @@ export function HeroSection() {
 }
 
 function Artwork() {
-
   const ref = useRef(null)
 
   return (
     <div className={styles.artworkContainer} ref={ref}>
       <motion.div
         className={styles.heroTextContainer}
+        id="Hero"
       >
-        <h1 className={`${archivo.className} ${styles.heroText}`}>
+        <h1 className={`
+        ${archivo.className} 
+        ${styles.heroText}`}>
           Hi I&#39;m Jonas and I&#39;m a
           <br/>
-          <span>Junior Software Developer.</span>
+          <p>Junior Software Developer.</p>
         </h1>
       </motion.div>
-      {/*<Canvas*/}
-      {/*  camera={{*/}
-      {/*    fov: 50,*/}
-      {/*    position: [1, 1.3, -0.2],*/}
-      {/*    zoom: 1,*/}
-      {/*}}*/}
-      {/*>*/}
-      {/*  <Leva hidden={true}/>*/}
-      {/*  <Room/>*/}
-      {/*</Canvas>*/}
     </div>
   )
 }
 
+
 function BackgroundArt() {
   return (
-    <div className={styles.backdropContainer}>
+    <div className={styles.backdropWrapper}>
+      {/*<Scene/>*/}
+      {/*<GradientScene/>*/}
+      {/*<WavesScene/>*/}
+      {/*<PointsScene/>*/}
+        <GpgpuScene/>
+      {/*<AevumCircle/>*/}
     </div>
   )
 }
+
+
+// function MovingPlane() {
+//   const mesh = useRef()
+//
+//   const uniforms = useMemo(
+//     () => ({
+//       u_time: {
+//         value: 0.0,
+//       },
+//       u_colorA: {value: new Color("#FFE486")},
+//       u_colorB: { value: new Color("#FEB3D9") },
+//     }),[])
+//
+//   useFrame(({clock}) => {
+//     mesh.current.material.uniforms.u_time.value = clock.getElapsedTime()
+//   })
+//
+//   return (
+//     <mesh ref={mesh} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={3}>
+//       <planeGeometry args={[1, 1, 16, 16]} />
+//       <shaderMaterial
+//         fragmentShader={fragmentShader}
+//         vertexShader={vertexShader}
+//         uniforms={uniforms}
+//         wireframe={false}
+//       />
+//     </mesh>
+//   );
+// }
