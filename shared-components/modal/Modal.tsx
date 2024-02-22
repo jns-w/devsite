@@ -62,7 +62,7 @@ export default function Modal() {
           opacity: 0,
         }}
       >
-        <Icon path={mdiWindowClose} size={1} className={styles.icon} onClick={() => setModalOpen(false)}/>
+        <Icon path={mdiWindowClose} size={1} className={styles.icon} />
         <div className={styles.contentContainer}>
           <div className={styles.content}>
             <h2> Blocks</h2>

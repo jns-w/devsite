@@ -18,7 +18,7 @@ export function PortfolioSection() {
           {portfolios.map(el => (
             <PortfolioCard
               key={el.name}
-              title={el.name}
+              name={el.name}
               description={el.description}
               type={el.type}
               slug={el.slug}

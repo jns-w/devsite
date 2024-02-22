@@ -8,7 +8,7 @@ export type Portfolio = {
   type: string,
   description: string,
   slug: string,
-  content: string,
+  content?: string,
   tags: string[],
   links: PortfolioLink[]
 }

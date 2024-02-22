@@ -2,8 +2,9 @@ import {motion} from "framer-motion";
 import styles from './portfolio-card.module.scss'
 import {ArrowRight} from "lucide-react";
 import {useRouter} from "next/navigation";
+import {Portfolio} from "@/data/portfolioData";
 
-export default function PortfolioCard(props) {
+export default function PortfolioCard(props: Portfolio) {
   const router = useRouter()
   return (
     <motion.div
@@ -24,7 +25,7 @@ export default function PortfolioCard(props) {
           {props.type}
         </h3>
         <h2>
-          {props.title}
+          {props.name}
         </h2>
         <p>
           {props.description}

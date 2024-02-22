@@ -1,14 +1,15 @@
-import { useRef, useEffect } from 'react'
+import {useRef, useEffect, MutableRefObject} from 'react'
+import canvas from "@/shared-components/canvas/Canvas";
 
-const useCanvas = (draw, options={}) => {
+const useCanvas = (draw: Function, options: any = {}) => {
 
-  const canvasRef = useRef(null)
+  const canvasRef: MutableRefObject<HTMLCanvasElement | null> = useRef(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
-    const context = canvas.getContext(options.context || '2d')
+    const context = canvas?.getContext(options.context || '2d')
     let frameCount = 0
-    let animationFrameId
+    let animationFrameId: any;
     const render = () => {
       frameCount++
       draw(context, frameCount)

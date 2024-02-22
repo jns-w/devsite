@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useRef} from "react";
+import {MutableRefObject, useEffect, useMemo, useRef} from "react";
 import './RenderMaterial'
 import * as THREE from "three";
 import {Canvas, useFrame, useLoader, useThree} from "@react-three/fiber";
@@ -24,10 +24,10 @@ function Gpgpu() {
   const imgTex = useLoader(THREE.TextureLoader, fileUrl);
 
   const COUNT = useMemo(() => 100, [])
-  const renderMat = useRef()
+  const renderMat: MutableRefObject<any> = useRef()
   const SEPARATION = useMemo(() => 3, [])
 
-  const pointsRef = useRef()
+  const pointsRef: MutableRefObject<any> = useRef()
 
   const followMouse = useRef()
 
@@ -47,9 +47,6 @@ function Gpgpu() {
 
   const positionUniforms = positionVariable.material.uniforms
   const velocityUniforms = velocityVariable.material.uniforms
-
-
-
 
   gpuCompute.init()
 
@@ -103,6 +100,7 @@ function Gpgpu() {
   })
 
   useFrame(({gl}) => {
+    if (!renderMat.current) return;
     gpuCompute.compute()
     renderMat.current.uniforms.uPosition.value = gpuCompute.getCurrentRenderTarget(positionVariable).texture;
     // renderMat.current.uniforms.uColor.value = uniforms.u_ColorA.value

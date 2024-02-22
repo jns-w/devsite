@@ -8,7 +8,7 @@ import {useParams, useRouter} from "next/navigation";
 import axios from "axios";
 import {Suspense, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
-import {PortfolioLink, portfolios} from "@/data/portfolioData";
+import {Portfolio, PortfolioLink, portfolios} from "@/data/portfolioData";
 import {AppWindow, Github, MousePointerSquare} from "lucide-react";
 
 
@@ -39,14 +39,14 @@ export default function Article(props: Props) {
     <>
       <Suspense fallback={<Loader/>}>
         <Links links={portfolioData?.links}/>
-        <ArticleContent slug={params?.slug} tags={portfolioData?.tags}/>
+        <ArticleContent slug={params?.slug as string} tags={portfolioData?.tags}/>
       </Suspense>
     </>
   )
 }
 
 
-async function ArticleContent(props) {
+async function ArticleContent(props: {slug?: string, tags?: string[]}) {
   const [downloadProgress, setDownloadProgress] = useState<number>(0)
   const router = useRouter()
 
@@ -92,8 +92,10 @@ async function ArticleContent(props) {
           content ? (
             <Markdown
               components={{
-                a: ({node, ...props}) => {
-                  return <Link {...props} />
+                a: ({children, ...props}) => {
+                  return <Link href={props.href as string}>
+                    {children}
+                  </Link>
               }}}
             >
               {content}
@@ -117,7 +119,7 @@ async function ArticleContent(props) {
   )
 }
 
-function Links(props) {
+function Links(props: {links?: PortfolioLink[]}) {
   return (
     <div
       className={styles.leftBar}
@@ -178,7 +180,7 @@ function Links(props) {
   )
 }
 
-function Tags(props) {
+function Tags(props: {tags?: string[]}) {
   return (
     <div className={styles.tags}>
       {

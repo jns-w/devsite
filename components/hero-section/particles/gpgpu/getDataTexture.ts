@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 
-export function getDataTexture(size) {
+export function getDataTexture(size: number) {
     let number = size * size
 
     const data = new Float32Array(number * 4) // 4 values per point (rgba)
@@ -71,7 +71,7 @@ export function getSphereTexture(pointsCount: number, radius: number, offsetX: n
 
 }
 
-export function getVelocityTexture(size) {
+export function getVelocityTexture(size: number) {
     let number = size * size
 
     const data = new Float32Array(number * 4) // 4 values per point (rgba)
