@@ -2,5 +2,7 @@ FROM node:21-alpine
 WORKDIR /app
 COPY . .
 RUN yarn install --production
-CMD "[\"yarn\", \"start\"]"
+COPY . .
+RUN yarn run build
+CMD ["yarn", "start"]
 EXPOSE 3000
