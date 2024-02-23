@@ -1,6 +1,6 @@
 FROM node:21-alpine
 WORKDIR /app
-COPY . .
+COPY package.json .
 RUN yarn install --production
 COPY . .
 RUN yarn run build
