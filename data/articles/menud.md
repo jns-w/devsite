@@ -27,10 +27,7 @@ So my goal for this project is to create a website that has an **app-like experi
 Set your browser to mobile mode and go to the [demo](https://menud.jonaswong.dev) to experience it!
 
 ## Database design structure
-Menu data is served using a golang server, with PostgresSQL as the database of choice. I have chosen to keep this simple, and not use any abstracted ORMs, opting for [SQLx](https://github.com/launchbadge/sqlx#).\
-\
-Designed for the long term, the menu's data is separated into categories, and joined via IDs when being fetched; allowing reusability and adjustments to the menu in the future.
+Menu data is served using a golang server, with PostgresSQL as the database of choice. I have chosen to keep this simple, and not use any abstracted ORMs, opting for [SQLx](https://github.com/launchbadge/sqlx#). Designed for the long term, the menu's data is separated into categories, and joined via IDs when being fetched; allowing reusability and adjustments to the menu in the future.
 
-### Models
 ![Menu'd Models](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1706846307/Devsite/menu-d/menud-models_mo73h7.png)
 Thank you for reading! If you're interested, do check out my next project [Nothing To Do](/article/nothing-to-do), built in react-native.

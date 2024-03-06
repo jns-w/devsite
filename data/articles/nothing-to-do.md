@@ -6,7 +6,7 @@ Github: [https://github.com/jns-w/nothing](https://github.com/jns-w/nothing)
 > - Expo
 > - Reanimated
 > - Gesture Handler
-> - Jotai\
+> - Jotai
 #
 I have always liked the look of clean Scandinavian typefaces, and often see great minimalistic designs based on these typefaces posted on pinterest. They are all amazing concepts, but that's about where it ends, at the conceptual stage. Looking around for completed apps in such, they were few and far between.\
 \
