@@ -20,7 +20,7 @@ So my goal for this project is to create a website that has an **app-like experi
 > - seamless page transitions, that allows for better route sensing for the user
 > - reactive UI for conditional components i.e. carts, item counts
 
-![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709717282/Devsite/menu-d/Menud-UIs_syn9m9.png)
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709717699/Devsite/menu-d/Menud-UIs_oleoer.png)
 
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709713276/Devsite/menu-d/menud-comp2_dbmopr.gif)
 
