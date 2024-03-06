@@ -1,6 +1,6 @@
 # Nothing To Do, an Interactive To Do App
 Github: [https://github.com/jns-w/nothing](https://github.com/jns-w/nothing)
-![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1706929031/Devsite/nothing-to-do/Nothing-to-do-test_csodtt.png)
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709716905/Devsite/nothing-to-do/Nothing_To_Do-main_dk4esu.png)
 > #### Frontend Stack:
 > - React-native
 > - Expo
