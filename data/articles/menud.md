@@ -12,12 +12,18 @@ Demo site: [menud.jonaswong.dev](https://menud.jonaswong.dev)
 > - PostgresSQL
 ## 
 Using a digital menu in a restaurant can be a really varied experience for customers. These websites are often designed as typical web pages refitted into mobile, layouts are confusing and buttons are tiny. Whenever I’m using them, **I find myself missing the seamless experience I have in my mobile apps.**
+
 ### Goals
-So my goal for this project is to have a more **app-like experience on a mobile browser**:
->- big touch points for site navigation
->- seamless page transitions, for better route sensing
->- reactive UI for conditional components i.e. carts, cart item counts
-#### pictures of UI
+So my goal for this project is to create a website that has an **app-like experience on a mobile browser**:
+>#### Design requirements
+> - big touch points for site navigation
+> - seamless page transitions, that allows for better route sensing for the user
+> - reactive UI for conditional components i.e. carts, item counts
+
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709713276/Devsite/menu-d/menud-comp2_dbmopr.gif)
+
+Go to [demo] to experience it.
+
 ## Database design structure
 Menu data is served using a golang server, with PostgresSQL as the database of choice. I have chosen to keep this simple, and not use any abstracted ORMs, opting for [SQLx](https://github.com/launchbadge/sqlx#).\
 Designed for the long term, the data is separated into tiers, and joined via IDs when being fetched; allowing reusability and adjustments to the menu in the future.
