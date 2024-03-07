@@ -14,8 +14,8 @@ void main() {
     vec3 velocity = texture2D( uCurrentVelocity, vUv ).xyz;
 
     // vec2 velocity = texture2D( uCurrentPosition, vUv ).zw;
-
     // vec3 finalOriginal = original;
+
 
     velocity *= 0.90;
 
@@ -27,11 +27,13 @@ void main() {
     }
 
     // mouse attraction force
-    float mouseDistance = distance( position, uMouse );
-    float maxDistance = 1.5;
-    if( mouseDistance < maxDistance ) {
-        vec3 direction = normalize( position - uMouse );
-        velocity -= direction * ( 1.0 - mouseDistance / maxDistance ) * 0.03;
+    if( uMouse.x != 0. && uMouse.y != 0.) {
+        float mouseDistance = distance( position, uMouse );
+        float maxDistance = 1.5;
+        if( mouseDistance < maxDistance ) {
+            vec3 direction = normalize( position - uMouse );
+            velocity -= direction * ( 1.0 - mouseDistance / maxDistance ) * 0.03;
+        }
     }
 
 

@@ -1,4 +1,4 @@
-import {MutableRefObject, useEffect, useMemo, useRef} from "react";
+import {MutableRefObject, useEffect, useMemo, useRef, useState} from "react";
 import './RenderMaterial'
 import * as THREE from "three";
 import {Canvas, useFrame, useLoader, useThree} from "@react-three/fiber";
@@ -20,6 +20,7 @@ import {themeAtom} from "@/atoms/ui";
 
 function Gpgpu() {
   const [theme,] = useAtom(themeAtom)
+  const [doCompute, setDoCompute] = useState(false);
   const fileUrl = '/images/circle.png'
   const imgTex = useLoader(THREE.TextureLoader, fileUrl);
 
@@ -80,7 +81,7 @@ function Gpgpu() {
   const uniforms = useMemo(() => ({
     uPosition: {value: null},
     uOriginalPosition: {value: pointsOnSphere},
-    uMouse: {value: new THREE.Vector3(-1000, -1000, 0)},
+    uMouse: {value: new THREE.Vector3(0, 0, 0)},
     u_ColorA: {value: new THREE.Color("#181818")},
     u_ColorB: {value: new THREE.Color("#ad1414")},
     u_Texture: {value: imgTex},
