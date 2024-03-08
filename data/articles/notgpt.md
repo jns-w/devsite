@@ -1,4 +1,4 @@
-# NotGPT, Rust In-memory Autocomplete Implementation
+# NotGPT: Blazing-Fast Autocomplete with Rust and In-Memory Trie
 Github: [https://github.com/jns-w/notgpt](https://github.com/jns-w/notgpt)\
 Demo site: [https://notgpt.jonaswong.dev](https://notgpt.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1706968350/Devsite/notgpt/Notgpt-main_p98wko.png)
@@ -11,25 +11,31 @@ Demo site: [https://notgpt.jonaswong.dev](https://notgpt.jonaswong.dev)
 > - Jotai
 > - Sass
 # 
-While I was studying algorithms I came across a great deal of cool data structures that are very satisfying to implement. However after a while, it dawned on me that I'm just repeatedly using them in sandboxed environments, solving leetcode mind teasers, and it just didn't feel right leaving them in the coding playground. So I began wondering how do i apply some of them to real life problems?
+While studying algorithms, I came across many fascinating data structures that were both intriguing and satisfying to implement. However, after a while, I realized that repeatedly using them in sandboxed environments and solving coding challenges felt incomplete. I wanted to apply these structures to real-world problems.
+
 ## Goals
-The goal of this project is to apply an algorithmic concept to solve a real life problem. And I decided to put myself in the shoes of a Google engineer (in their founding years) trying to solve for auto-completion suggestions on their search bar, from scratch.
+The primary goal of this project was to leverage algorithmic concepts to solve a practical problem. I decided to put myself in the shoes of a Google engineer during the company's founding years, tasked with implementing autocomplete suggestions for the search bar from scratch.
 \
 \
-On the frontend, we can just create a simple search bar to execute the concept, and then in the backend we need to run a low-level language to power the auto-completions efficiently.
+On the frontend, a simple search bar would serve as the interface for executing the concept. However, on the backend, a low-level, high-performance language would power the autocomplete functionality efficiently.
 
 ## Rustlang for backend
-The multi-year voted favourite language, Rustlang is touted to be blazingly fast and performant. It also has great libraries for serving APIs like [Actix](https://actix.rs/). Coupled with the fact that I've always wanted to try it, I decided to give it a go.
+Rust, the multi-year voted favorite language, is renowned for its blazing speed and performance. It also boasts excellent libraries for serving APIs, such as [Actix](https://actix.rs/). Coupled with my desire to explore Rust, it became the natural choice for this project.
+
 ### In-memory database
-Running a low-level language like rust is excellent for performance, but if I am accessing the suggestion strings via a storage database, all that performance is going to be bottlenecked at the database access anyway, which would defeat the purpose of this project.
-To optimise for performance, I had to create an in-memory database.
+Running a low-level language like Rust is excellent for performance, but accessing suggestion strings via a traditional storage database would bottleneck that performance, defeating the project's purpose. To optimize for speed, I created an in-memory database.
+
 ### Prefix Trie
-The trie is the perfect algorithm to solve for this problem, this data structure is probably one of the most efficient ways to search for prefixes, and with some extra work, it is also possible to store additional data like search counts, to sort through results.
-#### image of trie implementation
+The trie data structure is perfect for solving this problem. It's one of the most efficient ways to search for prefixes, and with some additional work, it's also possible to store auxiliary data like search counts to sort results.
+
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709875251/Devsite/notgpt/notgpt-trie-impl01_laym6r.png)
+
 ## Client
-#### image of search bar in action
-> #### Possible improvements to the project
-> - Periodic snapshots to store trie into storage
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709874471/Devsite/notgpt/notgpt-searchbar01_oblb7f.gif)
+
+The frontend is a simple React app with a search bar that sends requests to the backend. The results are then displayed in a dropdown, allowing users to select a suggestion. Using framer motion, the dropdown elegantly animates in and out, creating a smooth and satisfying user experience.
+> #### Possible improvements
+> - Periodic snapshots to store the trie in persistent storage
 > - Trending suggestions feature
 ### 
 Thank you for reading! To see my other works, do check out my portfolio [here](/#Portfolio).

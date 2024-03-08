@@ -1,4 +1,4 @@
-# Lobi, a Badminton Game Facilitator Site
+# Lobi: Streamlining the Badminton Game Experience
 Github: [github.com/jns-w/lobi](https://github.com/jns-w/lobi)\
 Demo site: [lobi.jonaswong.dev](https://lobi.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709782140/Devsite/lobi/lobi-main_qnctkr.png)
@@ -34,7 +34,7 @@ Leveraging [shadcn](https://ui.shadcn.com)'s elegant UI component collection, Lo
 ## URL embedded search queries
 Lobi's search filters are designed to be URL-embeddable, allowing users to share their search queries with others or save them for future re-use. This feature is particularly useful for organisers who can easily share game details with potential participants. For example, a facility organizer can create a URL that filters for games on a specific facility, then share it across various platforms.
 
-Try it: [https://lobi.jonaswong.dev/?facilities=650525c7f4d936033e4f8847&skillLevels=Beginner%2CIntermediate%2CAdvanced%2CExpert&page=1](https://lobi.jonaswong.dev/?facilities=650525c7f4d936033e4f8847&skillLevels=Beginner%2CIntermediate%2CAdvanced%2CExpert&page=1)
+Try it: [Demo site with embedded search queries](https://lobi.jonaswong.dev/?facilities=650525c7f4d936033e4f8847&skillLevels=Beginner%2CIntermediate%2CAdvanced%2CExpert&page=1)
 
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709791506/Devsite/lobi/lobi-url02_dmvzbx.png)
 
