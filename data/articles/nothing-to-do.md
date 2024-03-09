@@ -21,11 +21,13 @@ I have always liked the look of clean Scandinavian typefaces, and often see grea
 ## Key Interactions
 Nothing To Do incorporates several intuitive interactions to streamline task management:
 
-Swiping for Task Completion: Users can swipe left or right on a task to mark it as complete, providing a natural and satisfying gesture.
+**Press button to create new tasks:** A simple button press will initiate the creation of a new task, keeping the interface clutter-free.
 
-Hold to Edit Tasks: Holding down on a task will reveal the edit option, allowing users to modify task details seamlessly.
+**Swiping for Task Completion:** Users can swipe right on a task to mark it as complete, providing a natural and satisfying gesture.
+
+**Hold to Edit Tasks:** Holding down on a task will reveal the edit option, allowing users to modify task details seamlessly.
 Press to Create New Tasks: A simple button press will initiate the creation of a new task, keeping the interface clutter-free.
 
-Hold to Edit Lists: Users can hold down on the list button to access options for managing and organizing their to-do lists.
+**Hold button to Edit Lists:** Users can hold down on the list button to access options for managing and organizing their to-do lists.
 
 Thank you for reading! Do check out my next project, [Blocks](/article/blocks), a real-time time tracker that is synced across devices.
