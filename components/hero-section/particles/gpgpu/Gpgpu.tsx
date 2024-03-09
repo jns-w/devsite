@@ -3,7 +3,11 @@ import './RenderMaterial'
 import * as THREE from "three";
 import {Canvas, useFrame, useLoader, useThree} from "@react-three/fiber";
 import {GPUComputationRenderer} from "three/examples/jsm/misc/GPUComputationRenderer";
-import {getSphereTexture, getVelocityTexture} from "@/components/hero-section/particles/gpgpu/getDataTexture";
+import {
+  getSphereTexture,
+  getStartingTexture,
+  getVelocityTexture
+} from "@/components/hero-section/particles/gpgpu/getDataTexture";
 
 // @ts-ignore
 import simFragmentPosition from "!!raw-loader!./shaders/simFragmentPosition.glsl";
@@ -20,7 +24,6 @@ import {themeAtom} from "@/atoms/ui";
 
 function Gpgpu() {
   const [theme,] = useAtom(themeAtom)
-  const [doCompute, setDoCompute] = useState(false);
   const fileUrl = '/images/circle.png'
   const imgTex = useLoader(THREE.TextureLoader, fileUrl);
 
@@ -38,9 +41,9 @@ function Gpgpu() {
   const gpuCompute = new GPUComputationRenderer(200, 200, gl);
 
   const pointsOnSphere = useMemo(() => getSphereTexture(COUNT, 2, 2), [])
+  const startPoints = useMemo(() => getStartingTexture(COUNT), [])
 
-
-  const positionVariable = gpuCompute.addVariable('uCurrentPosition', simFragmentPosition, pointsOnSphere)
+  const positionVariable = gpuCompute.addVariable('uCurrentPosition', simFragmentPosition, startPoints)
   const velocityVariable = gpuCompute.addVariable('uCurrentVelocity', simFragmentVelocity, getVelocityTexture(COUNT))
 
   gpuCompute.setVariableDependencies(positionVariable, [positionVariable, velocityVariable])
@@ -79,7 +82,8 @@ function Gpgpu() {
   }, [COUNT])
 
   const uniforms = useMemo(() => ({
-    uPosition: {value: null},
+    uPosition: {value: startPoints},
+    uCurrentPosition: {value: startPoints},
     uOriginalPosition: {value: pointsOnSphere},
     uMouse: {value: new THREE.Vector3(0, 0, 0)},
     u_ColorA: {value: new THREE.Color("#181818")},

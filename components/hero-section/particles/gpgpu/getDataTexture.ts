@@ -35,6 +35,31 @@ export function getDataTexture(size: number) {
     return dataTexture;
 }
 
+export function getStartingTexture(pointsCount: number) {
+    let number = pointsCount * pointsCount
+    const data = new Float32Array(number * 4) // 4 values per point (rgba)
+
+    for (let i = 0; i < pointsCount; i++) {
+        for (let j = 0; j < pointsCount; j++) {
+            const index = (i * pointsCount + j) * 4
+            data[index] = 5
+            data[index + 1] = Math.random() * 5 - 2.5
+            data[index + 2] = 0
+            data[index + 3] = 0
+        }
+    }
+
+    const dataTexture = new THREE.DataTexture(
+        data,
+        pointsCount,
+        pointsCount,
+        THREE.RGBAFormat, // this is for using Float32Array instead of Uint8Array
+        THREE.FloatType // this is for using Float32Array instead of Uint8Array
+    );
+    dataTexture.needsUpdate = true;
+    return dataTexture;
+}
+
 export function getSphereTexture(pointsCount: number, radius: number, offsetX: number) {
     let number = pointsCount * pointsCount
 

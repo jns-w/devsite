@@ -23,16 +23,16 @@ void main() {
     vec3 direction = normalize( original - position );
     float dist = length( original - position );
     if( dist > 0.005 ) {
-        velocity += direction  * 0.0025;
+        velocity += direction  * 0.0018;
     }
 
     // mouse attraction force
     if( uMouse.x != 0. && uMouse.y != 0.) {
         float mouseDistance = distance( position, uMouse );
-        float maxDistance = 1.5;
+        float maxDistance = 1.3;
         if( mouseDistance < maxDistance ) {
             vec3 direction = normalize( position - uMouse );
-            velocity -= direction * ( 1.0 - mouseDistance / maxDistance ) * 0.03;
+            velocity -= direction * ( 1.0 - mouseDistance / maxDistance ) * 0.015;
         }
     }
 
