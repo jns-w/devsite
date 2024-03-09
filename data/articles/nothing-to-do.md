@@ -21,13 +21,21 @@ I have always liked the look of clean Scandinavian typefaces, and often see grea
 ## Key Interactions
 Nothing To Do incorporates several intuitive interactions to streamline task management:
 
-**Press button to create new tasks:** A simple button press will initiate the creation of a new task, keeping the interface clutter-free.
+**Press Button to Create New Tasks:** A simple button press will initiate the creation of a new task, keeping the interface clutter-free. Our button transforms and adapts as our app state changes, allowing it to serve multiple purposes.
 
-**Swiping for Task Completion:** Users can swipe right on a task to mark it as complete, providing a natural and satisfying gesture.
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709990927/Devsite/nothing-to-do/nothing-ui05_nvfhsw.gif)
 
-**Hold to Edit Tasks:** Holding down on a task will reveal the edit option, allowing users to modify task details seamlessly.
-Press to Create New Tasks: A simple button press will initiate the creation of a new task, keeping the interface clutter-free.
+**Swiping for Task Completion:** Users can swipe right on a task to mark it as complete. On touch the task bounces slightly to show interactivity, and a line through animation indicates successful completion.
 
-**Hold button to Edit Lists:** Users can hold down on the list button to access options for managing and organizing their to-do lists.
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709990453/Devsite/nothing-to-do/nothing-ui02_qz3jhz.gif)
+
+**Long Hold on Task to Edit:** Holding down on a task will reveal the edit option, allowing users to modify task details seamlessly.
+
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709991146/Devsite/nothing-to-do/nothing-ui03_pnle8t.gif)
+
+
+**Long Hold on button to Edit List:** Users can hold down on the list button to access options for managing and organizing their to-do lists.
+
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709990458/Devsite/nothing-to-do/nothing-ui04_rkauhi.gif)
 
 Thank you for reading! Do check out my next project, [Blocks](/article/blocks), a real-time time tracker that is synced across devices.
