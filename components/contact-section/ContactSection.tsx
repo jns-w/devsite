@@ -15,7 +15,7 @@ export function ContactSection() {
     {
       name: "LinkedIn",
       icon: mdiLinkedin,
-      url: "-",
+      url: "https://www.linkedin.com/in/jns-w",
     },
     {
       name: "Github",
@@ -41,6 +41,7 @@ export function ContactSection() {
           links.map(el => (
             <motion.a
               href={el.url}
+              target="_blank"
               rel="noopener noreferrer"
               key={el.name}
               className={styles.button}

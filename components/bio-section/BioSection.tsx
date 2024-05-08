@@ -117,7 +117,7 @@ export function BioSection() {
         </div>
 
         <div className={styles.description}>
-         I’m a budding software developer who has been honing my craft part-time, looking to turn pro. Check out my <Link href="#Portfolio">portfolio</Link> to see what I can do. And hit me up at through any of these <Link href="#Contact">channels</Link>!
+         Hi there! I am  a software developer who loves to building. Check out my <Link href="#Portfolio">portfolio</Link> to see what I can do. And hit me up at through any of these <Link href="#Contact">channels</Link>!
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ function Artwork() {
         ${styles.heroText}`}>
           Hi I&#39;m Jonas and I&#39;m a
           <br/>
-          <p>Junior Software Developer.</p>
+          <p>Full Stack Software Developer.</p>
         </h1>
       </motion.div>
     </div>

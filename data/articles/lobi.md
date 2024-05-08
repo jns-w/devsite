@@ -18,8 +18,8 @@ Lobi is a web application that aims to simplify the process of organising and fi
 > - MongoDB with Node Driver
 
 ## The problem
-The badminton scene in Singapore is thriving, with thousands of games played monthly. However, organizers and players face several challenges:
-> - **Organizers** have to broadcast game information across various channels like Facebook groups, WhatsApp, and Telegram, often resorting to spamming to reach potential participants.
+The badminton scene in Singapore is thriving, with thousands of games played monthly. However, organisers and players face several challenges:
+> - **Organisers** have to broadcast game information across various channels like Facebook groups, WhatsApp, and Telegram, often resorting to spamming to reach potential participants.
 > - **Players** must join multiple networks and group chats, constantly sifting through redundant data to find suitable games.
 This cumbersome process leads to frustration and inefficiency for both parties.
 ## Goal
@@ -52,6 +52,6 @@ Unlike Lobi's previous project, Blocks, where the Mongoose ORM was used, this ti
 
 Example of a custom match statement generated in the server:
 
-![](https://res.cloudinary.com/ds1s8ilcc/image/upload/c_scale,w_533/v1709802570/Devsite/lobi/lobi-mongodriver01_ozucvi.png)
+![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709802570/Devsite/lobi/lobi-mongodriver01_ozucvi.png)
 
 Thank you for reading! If you'd like to see more, check out my next project [Menu'd](/article/menud) where I built an app-like web page using react and pure css.

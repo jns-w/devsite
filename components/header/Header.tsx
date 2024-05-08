@@ -95,7 +95,7 @@ export function Header() {
             <Icon className={styles.brands} path={mdiGithub}/>
           </a>
           <a
-            target="_blank" href="" rel="noopener noreferrer"
+            target="_blank" href="https://www.linkedin.com/in/jns-w/" rel="noopener noreferrer"
           >
 
             <Icon className={styles.brands} path={mdiLinkedin}/>
