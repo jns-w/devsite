@@ -92,4 +92,16 @@ $photo-size: 100px;
       color: var(--theme-accent-hover);
     }
   }
+
+  @media (max-width: 599px) {
+    font-size: 28px;
+    line-height: 2rem;
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 32px;
+    line-height: 2rem;
+    width: 100%;
+  }
 }

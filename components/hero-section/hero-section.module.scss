@@ -21,6 +21,12 @@
   //background-color: var(--theme-mild-backing);
   border-radius: 20px;
   margin-left: 100px;
+
+  @media (max-width: 800px) {
+    margin-left: 0;
+    //border: #b05444 1px solid;
+    width: auto;
+  }
 }
 
 //.artwork {
@@ -34,8 +40,6 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 100%;
-  //border: #b05444 1px solid;
 }
 
 .heroText {
@@ -49,6 +53,7 @@
   margin-left: 120px;
   padding: 0;
   text-align: justify;
+  overflow-wrap: normal;
 
   p {
     //color: #f6f5f1;
@@ -80,6 +85,11 @@
     padding-right: 8px;
     animation: typing 2s steps(30, end),
     blink-caret .75s step-end infinite;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 32px;
+    margin-left: 0;
   }
 }
 
