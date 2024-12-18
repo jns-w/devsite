@@ -1,11 +1,10 @@
 "use client"
-import Modal from "@/shared-components/modal/Modal";
-import {AnimatePresence} from "framer-motion";
-import {modalAtom} from "@/atoms/ui";
-import {useEffect} from "react";
-import {useAtom} from "jotai";
-
-import { BottomBar } from "../bottom-bar/bottom-bar";
+import { BottomBar } from "@/components/bottom-bar/bottom-bar"
+import Modal from "@/shared-components/modal/Modal"
+import { AnimatePresence } from "framer-motion"
+import { modalAtom } from "@/atoms/ui"
+import { useEffect } from "react"
+import { useAtom } from "jotai"
 
 export function Overlays() {
   const [modalOpen, setModalOpen] = useAtom(modalAtom)
@@ -21,8 +20,8 @@ export function Overlays() {
   return (
     <>
       <AnimatePresence>
-        {modalOpen && <Modal/>}
-        <BottomBar/>
+        {modalOpen && <Modal />}
+        <BottomBar />
       </AnimatePresence>
     </>
   )

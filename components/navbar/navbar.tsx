@@ -7,7 +7,6 @@ import { archivo } from "@/styles/fonts"
 import { useState } from "react"
 import Icon from "@mdi/react"
 import Link from "next/link"
-import clsx from "clsx"
 
 import { ThemeToggle } from "./theme-toggle/theme-toggle"
 import styles from "./navbar.module.scss"

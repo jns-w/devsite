@@ -1,7 +1,5 @@
-import Article from "@/app/article/[slug]/Article"
-import { portfolios } from "@/data/portfolioData"
-
 import styles from "./article.module.scss"
+import Article from "./article"
 
 export default function Page() {
 

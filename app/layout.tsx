@@ -1,7 +1,8 @@
 "use client"
 import "./globals.scss"
 
-import { Navbar, Overlays } from "@/components"
+import { Overlays } from "@/components/overlays/overlays"
+import { Navbar } from "@/components/navbar/navbar"
 import { Inter } from "next/font/google"
 import { ReactNode } from "react"
 import { Provider } from "jotai"

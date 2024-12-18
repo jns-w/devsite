@@ -1,11 +1,12 @@
-import {motion} from 'framer-motion';
-import styles from './modal.module.scss';
-import {mdiWindowClose} from "@mdi/js";
-import Icon from "@mdi/react";
-import {useRef} from "react";
-import {useAtom} from "jotai";
-import {modalAtom} from "@/atoms/ui";
-import {useEventListener, useOnClickOutside} from "usehooks-ts";
+import { useEventListener, useOnClickOutside } from "usehooks-ts"
+import { mdiWindowClose } from "@mdi/js"
+import { motion } from "framer-motion"
+import { modalAtom } from "@/atoms/ui"
+import { useAtom } from "jotai"
+import { useRef } from "react"
+import Icon from "@mdi/react"
+
+import styles from "./modal.module.scss"
 
 export default function Modal() {
 
@@ -24,45 +25,45 @@ export default function Modal() {
     <motion.div
       className={styles.wrapper}
       initial={{
-        opacity: 0
-      }}
-      animate={{
-        opacity: 1,
-        transition: {
-          type: "ease",
-          duration: 0.2
-        }
+        opacity: 0,
       }}
       exit={{
         opacity: 0,
         transition: {
+          duration: 0.2,
           type: "ease",
-          duration: 0.2
-        }
+        },
+      }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 0.2,
+          type: "ease",
+        },
       }}
     >
       <motion.div
         ref={modalRef}
         className={styles.container}
-        initial={{
-          opacity: 0,
-          scale: 0.5
-        }}
         animate={{
           opacity: 1,
-          scale: 1
+          scale: 1,
+        }}
+        initial={{
+          opacity: 0,
+          scale: 0.5,
         }}
         transition={{
-          ease: [.25, .5, .35, 1],
           duration: .3,
+          ease: [.25, .5, .35, 1],
         }}
         exit={{
-          transition: {type: "ease", duration: 0.2},
-          scale: 0.5,
           opacity: 0,
+          scale: 0.5,
+          transition: { duration: 0.2, type: "ease" },
         }}
       >
-        <Icon path={mdiWindowClose} size={1} className={styles.icon} />
+        <Icon size={1} path={mdiWindowClose} className={styles.icon} />
         <div className={styles.contentContainer}>
           <div className={styles.content}>
             <h2> Blocks</h2>

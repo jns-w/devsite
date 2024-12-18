@@ -1,7 +1,0 @@
-export * from './navbar/navbar'
-export * from './hero-section/hero-section'
-export * from './bio-section/bio-section'
-export * from './portfolio-section/portfolio-section'
-export * from './contact-section/contact-section'
-export * from './overlays/Overlays'
-export * from './bottom-bar/bottom-bar'
