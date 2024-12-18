@@ -1,8 +1,9 @@
-import {motion} from "framer-motion";
-import styles from './portfolio-card.module.scss'
-import {ArrowRight} from "lucide-react";
-import {useRouter} from "next/navigation";
 import {Portfolio} from "@/data/portfolioData";
+import {useRouter} from "next/navigation";
+import {ArrowRight} from "lucide-react";
+import {motion} from "framer-motion";
+
+import styles from './portfolio-card.module.scss'
 
 export default function PortfolioCard(props: Portfolio) {
   const router = useRouter()
@@ -13,10 +14,10 @@ export default function PortfolioCard(props: Portfolio) {
       whileHover={{
         scale: 1.05,
         transition: {
-          type: "spring",
-          stiffness: 500,
           damping: 20,
           duration: 0.1,
+          stiffness: 500,
+          type: "spring",
         },
       }}
     >

@@ -1,8 +1,8 @@
 import { ArrowUpToLine } from "lucide-react"
 import { archivo } from "@/styles/fonts"
+import Link from "next/link"
 
 import styles from "./bottom-bar.module.scss"
-import Link from "next/link"
 
 export function BottomBar() {
   return <div className={styles.bottomBarWrapper}>

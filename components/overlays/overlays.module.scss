@@ -1,7 +1,7 @@
 .contact-section {
   position: fixed;
+  z-index: 5;
   width: 100vw;
   height: 100vh;
-  z-index: 5;
   pointer-events: none;
 }

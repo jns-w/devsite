@@ -2,9 +2,10 @@
 
 .contactSection {
   @include section-wrapper;
-  padding-top: 200px;
-  margin-bottom: 200px;
+
   position: relative;
+  margin-bottom: 200px;
+  padding-top: 200px;
 }
 
 .headerContainer {
@@ -14,24 +15,24 @@
 .buttonsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
-  margin: 50px auto;
+  align-items: center;
+  justify-content: center;
   max-width: 200px;
+  margin: 50px auto;
 }
 
 .button {
   @include button-dark-lg;
-  width: 100%;
-  justify-content: center;
 
+  justify-content: center;
+  width: 100%;
   text-decoration: none;
 }
 
 .icon {
     width: 22px;
-    fill: var(--theme-focal-text-color);
     color: var(--theme-focal-text-color);
     cursor: pointer;
+    fill: var(--theme-focal-text-color);
 }

@@ -2,7 +2,7 @@ import {shaderMaterial} from "@react-three/drei";
 import {extend} from "@react-three/fiber";
 
 const RenderMaterial = shaderMaterial(
-    {uPosition: null, uColor: null, uMouse: null},
+    {uColor: null, uMouse: null, uPosition: null},
     `
     attribute vec2 reference;
     varying vec2 vRef;

@@ -1,14 +1,15 @@
 "use client"
 
-import React, {useCallback, useEffect, useState} from "react";
-import {motion} from "framer-motion";
-import styles from './theme-toggle.module.scss'
-import Icon from '@mdi/react';
 import {mdiMoonWaningCrescent, mdiWhiteBalanceSunny} from '@mdi/js';
-import {useAtom} from "jotai";
-import {themeAtom} from "@/atoms/ui";
+import React, {useCallback, useEffect, useState} from "react";
 import {Moon, Sun} from "lucide-react";
+import {motion} from "framer-motion";
+import {themeAtom} from "@/atoms/ui";
+import Icon from '@mdi/react';
+import {useAtom} from "jotai";
 import clsx from "clsx";
+
+import styles from './theme-toggle.module.scss'
 
 
 export function ThemeToggle() {
@@ -30,12 +31,12 @@ export function ThemeToggle() {
 
 
   return (
-    <motion.div layout layoutRoot className={styles.switch} data-theme={theme} onClick={toggleSwitch}>
+    <motion.div layout layoutRoot data-theme={theme} onClick={toggleSwitch} className={styles.switch}>
       <Moon strokeWidth={2} className={clsx(styles.icon, styles.left)}/>
       <Sun strokeWidth={2} className={clsx(styles.icon, styles.right)}/>
       <motion.div
-        className={styles.handle}
         layout
+        className={styles.handle}
         transition={{
           layout: layoutAnimation
         }}
@@ -45,7 +46,7 @@ export function ThemeToggle() {
 }
 
 const layoutAnimation = {
-  type: "spring",
+  damping: 30,
   stiffness: 700,
-  damping: 30
+  type: "spring"
 };

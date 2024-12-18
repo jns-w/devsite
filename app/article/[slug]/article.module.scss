@@ -1,41 +1,41 @@
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 256px 0 0 0;
   min-height: 100vh;
-  position: relative;
+  padding: 256px 0 0;
 
-  @media (max-width: 800px) {
-    padding: 200px 0 0 0;
+  @media (width <= 800px) {
+    padding: 200px 0 0;
   }
 }
 
 
 .loader {
   position: absolute;
-  color: var(--theme-article-header-color);
   display: flex;
+  color: var(--theme-article-header-color);
 }
 
 /* HTML: <div class="loader"></div> */
 .progressBar {
+  position: relative;
   width: 100px;
   height: 15px;
-  border-radius: 20px;
   color: var(--theme-mild-text-color);
   border: 1px solid;
-  position: relative;
+  border-radius: 20px;
 }
 
 .progressBar::before {
-  content: "";
   position: absolute;
   margin: 2px;
-  inset: 0 100% 0 0;
+  background: currentcolor;
   border-radius: inherit;
-  background: currentColor;
   animation: l6 .5s forwards;
+  content: "";
+  inset: 0 100% 0 0;
 }
 
 @keyframes l6 {
@@ -47,19 +47,16 @@
 .leftBar {
   position: fixed;
   left: 10px;
-  padding: 30px;
-
-
   display: flex;
   flex-direction: column;
   gap: 6px;
-
-  font-size: 16px;
+  padding: 30px;
   font-weight: 500;
+  font-size: 16px;
 
   a {
-    text-decoration: none;
     color: var(--theme-milder-text-color);
+    text-decoration: none;
   }
 
 }
@@ -69,7 +66,7 @@
   flex-direction: column;
   gap: 20px;
 
-  @media (max-width: 1200px) {
+  @media (width <= 1200px) {
     display: none;
   }
 }
@@ -79,7 +76,6 @@
   gap: 12px;
   align-items: center;
   font-size: 15px;
-
   transition: color 0.4s ease-out;
 
   svg {
@@ -97,39 +93,39 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
   width: 700px;
   margin-bottom: 300px;
-  line-height: 1.618;
   color: var(--theme-article-text-color);
+  line-height: 1.618;
 
-  @media (max-width: 800px) {
+  @media (width <= 800px) {
     width: 100%;
     padding: 0 20px;
   }
 
   a {
-    text-decoration: none;
     color: var(--theme-article-link-color);
-    border-bottom: var(--theme-article-link-color) 1px solid;
     font-weight: 600;
+    text-decoration: none;
+    border-bottom: var(--theme-article-link-color) 1px solid;
   }
 
   strong {
-    font-weight: 600;
     color: var(--theme-article-header-color);
+    font-weight: 600;
   }
 
   .backButton {
     display: inline-flex;
-    width: auto;
     align-items: center;
-    font-size: .95rem;
-    font-weight: 500;
-    color: var(--theme-mild-text-color);
+    width: auto;
     margin: 0;
     padding: 0;
+    color: var(--theme-mild-text-color);
+    font-weight: 500;
+    font-size: .95rem;
     transition: color 0.2s ease-out;
 
     &:hover {
@@ -141,8 +137,8 @@
     }
 
     svg {
-      transition: transform 0.3s ease-out;
       margin-right: 2px;
+      transition: transform 0.3s ease-out;
     }
   }
 
@@ -152,63 +148,64 @@
   }
 
   h1 {
-    font-size: 2rem;
+    margin: 0.5rem 0 2rem;
     font-weight: 600;
+    font-size: 2rem;
     letter-spacing: .1px;
-    margin: 0.5rem 0 2rem 0;
+
     //margin: 1rem 0 1rem 0;
   }
 
   h2 {
-    font-size: 1.5rem;
+    margin: 1.8rem 0 0.4rem;
     font-weight: 600;
-    margin: 1.8rem 0 0.4rem 0;
+    font-size: 1.5rem;
   }
 
   h3 {
-    font-size: 1.3rem;
+    margin: 1.8rem 0 0.4rem;
     font-weight: 600;
-    margin: 1.8rem 0 0.4rem 0;
+    font-size: 1.3rem;
   }
 
   h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
     margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
   }
 
   p {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.9;
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0;
     color: var(--theme-article-text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.9;
 
     a {
-      font-weight: 600;
       color: var(--theme-article-link-color);
+      font-weight: 600;
       border-bottom: var(--theme-article-link-color) 1px solid;
     }
   }
 
   img {
     width: 100%;
+    margin: 1.5rem 0;
     border-radius: 8px;
-    margin: 1.5rem 0 1.5rem 0;
   }
 
   ul {
-    margin: .5rem 0 .3rem 0;
-    padding: 0 2rem 0 2rem;
+    margin: .5rem 0 .3rem;
+    padding: 0 2rem;
     list-style: disc;
     list-style-position: outside;
 
     li {
-      font-size: 1rem;
-      font-weight: 500;
-      line-height: 1.9;
-      margin: 0.3rem 0 0.3rem 0;
+      margin: 0.3rem 0;
       color: var(--theme-post-text-color);
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.9;
     }
 
 
@@ -217,23 +214,21 @@
 
 
   blockquote {
-    margin: 1rem 0 1rem 0;
-    padding: 1.5rem 2rem 1rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
+    margin: 1rem 0;
+    padding: 1.5rem 2rem 1rem;
     font-weight: 500;
+    font-size: 1.1rem;
     background: var(--theme-bg-off);
+    border-radius: 8px;
 
     h4 {
-      font-size: 1rem;
-      font-weight: 550;
-      margin: 1rem 0 0 0;
       width: auto;
+      margin: 1rem 0 0;
+      font-weight: 550;
+      font-size: 1rem;
     }
 
     li {
-
-
       list-style-image: var(--theme-bullet-image);
 
       &:last-child {
@@ -254,30 +249,30 @@
   margin-top: 2rem;
 
   h2 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-    line-height: 1.5;
     margin: 0 0 0 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
 
   }
 }
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
   width: 100%;
-  margin: 5rem 0 5rem 0;
-  flex-wrap: wrap;
+  margin: 5rem 0;
 
   span {
-    font-size: 0.9rem;
-    font-weight: 450;
-    line-height: 1.9;
-    color: var(--theme-mild-text-color);
-    border: solid 1px var(--theme-mild-text-color);
-    background: var(--mild-backing);
     padding: 0 5px;
+    color: var(--theme-mild-text-color);
+    font-weight: 450;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    background: var(--mild-backing);
+    border: solid 1px var(--theme-mild-text-color);
     border-radius: 3.5px;
 
 
@@ -290,10 +285,10 @@
   margin-bottom: 300px;
 
   p {
-    font-size: 1.1rem;
-    font-weight: 450;
-    line-height: 1.9;
-    margin: 3.5rem 0 1rem 0;
+    margin: 3.5rem 0 1rem;
     color: var(--theme-post-text-color);
+    font-weight: 450;
+    font-size: 1.1rem;
+    line-height: 1.9;
   }
 }

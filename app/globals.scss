@@ -1,5 +1,4 @@
 @import "@/styles/main";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,6 +21,7 @@
   0 4px 4px hsl(0deg 0% 0% / 3.5%),
   0 6px 6px hsl(0deg 0% 0% / 1.5%),
   0 8px 8px hsl(0deg 0% 0% / 0.5%);
+
   @include spread-map($theme-map-light);
 
 
@@ -54,12 +54,12 @@ html[data-theme="dark"] {
 }
 
 html, body {
-  animation: fadeInAnimation ease 600ms 200ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   max-width: 100vw;
   overflow-x: hidden;
   background: var($--theme-bg);
+  animation: fadeInAnimation ease 600ms 200ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .no-scroll {
@@ -69,14 +69,15 @@ html, body {
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

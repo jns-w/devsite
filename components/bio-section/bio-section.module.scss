@@ -1,13 +1,13 @@
 @import '@/styles/main';
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   gap: 20px;
   align-items: center;
-  max-width: var(--max-width);
   width: 100%;
+  max-width: var(--max-width);
   margin-top: 100px;
 
   $photo-size: 100px;
@@ -22,11 +22,11 @@
     width: $photo-size;
     height: $photo-size;
     background-image: url("/images/profile1.jpg");
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-
+    background-position: center;
+    background-size: cover;
     border-radius: 50%;
+
     //background-color: #b05444;
   }
 
@@ -35,41 +35,41 @@
     flex-direction: row;
     gap: 20px;
     align-items: center;
+
     //border: red solid 1px;
   }
 
   .bio {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 5px;
-
+    align-items: flex-start;
+    justify-content: center;
     color: var(--theme-text-color);
 
     h2 {
-      font-size: 18px;
       font-weight: 700;
+      font-size: 18px;
     }
 
     text {
-      font-size: 16px;
       font-weight: 400;
+      font-size: 16px;
       line-height: 1;
     }
 
   }
 
   .buttonsGroup {
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
     gap: 15px;
+    margin-top: 10px;
 
     //width: 100%;
 
     button {
-      @include button-dark-lg();
+      @include button-dark-lg;
     }
 
     .icon {
@@ -81,15 +81,15 @@
 
   .description {
     width: 80%;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -1px;
     color: var(--theme-text-color);
+    font-weight: 700;
+    font-size: 36px;
     line-height: 3rem;
+    letter-spacing: -1px;
 
     a {
-      text-decoration: none;
       color: var(--theme-accent);
+      text-decoration: none;
       transition: color 0.2s ease-out;
 
       &:hover {

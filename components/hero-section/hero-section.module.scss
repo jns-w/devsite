@@ -2,77 +2,79 @@
 
 .container {
   display: flex;
-  margin-top: 150px;
   align-items: center;
   justify-content: center;
   width: 100%;
   max-width: var(--max-width);
+  margin-top: 150px;
 
   .artworkContainer {
     display: flex;
     justify-content: center;
-    height: 400px;
     width: 100%;
+    height: 400px;
     border-radius: 20px;
   }
 
   .heroTextContainer {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
   }
 
   .heroText {
-    z-index: 2;
     position: relative;
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1;
-    color: var(--theme-text-color);
+    z-index: 2;
     padding: 0;
+    color: var(--theme-text-color);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -1.5px;
     text-align: justify;
+
     //overflow-wrap: break-word;
 
     span {
+      //white-space: nowrap;
+      //margin: 0 auto;
+      padding-right: 8px;
+      overflow: hidden;
+
       //color: #f6f5f1;
       color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-image: linear-gradient(
                       to right,
                       var(--theme-text-color) 15%,
                       var(--theme-accent) 70%
       );
+      background-clip: text;
+      background-clip: text;
+      border-right: .15em solid var(--theme-accent);
+
+      //animation: typing 2s steps(30, end),
+      animation: blink-caret .75s step-end infinite;
+      -webkit-text-fill-color: transparent;
 
       &::before {
         //background-color: #2a2828;
         position: absolute;
-        content: "";
-        height: 45px;
-        width: 100%;
-        z-index: -1;
         top: 57px;
+        z-index: -1;
+        width: 100%;
+        height: 45px;
         transform: translate(-8px, 4px);
+        content: "";
       }
-
-      overflow: hidden;
-      border-right: .15em solid var(--theme-accent);
-      //white-space: nowrap;
-      //margin: 0 auto;
-      padding-right: 8px;
-      //animation: typing 2s steps(30, end),
-      animation: blink-caret .75s step-end infinite;
     }
 
   }
 
   .box {
-    border: #b05444 solid 1px;
     width: 1024px;
     height: 1024px;
+    border: #b05444 solid 1px;
   }
 
 
@@ -88,9 +90,10 @@
     .heroTextContainer {
       justify-content: center;
     }
+
     .heroText {
-      text-align: center;
         font-size: 36px;
+      text-align: center;
     }
   }
 
@@ -101,15 +104,17 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
 
 @keyframes blink-caret {
-  from, to {
+  0%, 100% {
     border-color: transparent
   }
+
   50% {
     border-color: var(--theme-accent);
   }

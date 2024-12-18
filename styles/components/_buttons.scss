@@ -1,17 +1,18 @@
 @mixin button {
   display: flex;
   gap: 8px;
-  border: var(--theme-text-color) solid 1px;
-  color: var(--theme-text-color);
   padding: 10px 20px;
-  border-radius: 12px;
+  color: var(--theme-text-color);
   font-size: 14px;
+  border: var(--theme-text-color) solid 1px;
+  border-radius: 12px;
 }
 
 @mixin button-dark {
   @include button;
-  background-color: var(--theme-focal);
+
   color: var(--theme-focal-text-color);
+  background-color: var(--theme-focal);
   border: none;
 
 &:hover {
@@ -21,9 +22,10 @@
 
 @mixin button-dark-lg {
     @include button-dark;
+
     padding: 15px 30px;
-    font-size: 16px;
     font-weight: 600;
+    font-size: 16px;
 }
 
 
