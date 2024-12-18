@@ -1,9 +1,10 @@
 @import "@/styles/main";
 
-.wrapper {
+.contactSection {
   @include section-wrapper;
   padding-top: 200px;
   margin-bottom: 200px;
+  position: relative;
 }
 
 .headerContainer {

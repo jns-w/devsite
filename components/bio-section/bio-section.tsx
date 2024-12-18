@@ -1,79 +1,80 @@
 "use client"
-import styles from './bio-section.module.scss';
+import {mdiArrowDownRightBold} from "@mdi/js";
+import {useRouter} from "next/navigation";
 import {archivo} from "@/styles/fonts";
 import {motion} from "framer-motion";
 import Icon from "@mdi/react";
-import {mdiArrowDownRightBold} from "@mdi/js";
-import {useRouter} from "next/navigation";
 import Link from 'next/link';
+
+import styles from './bio-section.module.scss';
 
 export function BioSection() {
   const router = useRouter()
 
   const buttons = [
     {
-      text: "Portfolio",
-      href: "#Portfolio"
+      href: "/#Portfolio",
+      text: "Portfolio"
     },
     {
-      text: "Contact",
-      href: "#Contact"
+      href: "/#Contact",
+      text: "Contact"
     },
     {
-      text: "Resume",
-      href: "/resume"
+      href: "/resume",
+      text: "Resume"
     }
   ]
 
   const button = {
-    normal: {
-      backgroundColor: "var(--theme-focal)"
-    },
     hovered: {
-      width: "95px",
       backgroundColor: "var(--theme-accent)",
       transition: {
-        type: "spring",
-        stiffness: 500,
         damping: 20,
-        duration: 0.1
-      }
+        duration: 0.1,
+        stiffness: 500,
+        type: "spring"
+      },
+      width: "95px"
+    },
+    normal: {
+      backgroundColor: "var(--theme-focal)"
     }
   }
 
   const buttonIcon = {
+    hovered: {
+      opacity: 1,
+      rotate: 0,
+      transition: {
+        damping: 10,
+        duration: 0.3,
+        stiffness: 500,
+        type: "spring"
+      },
+      x: 0
+    },
     normal: {
       opacity: 0,
       rotate: -110,
       x: -15,
-    },
-    hovered: {
-      opacity: 1,
-      rotate: 0,
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 500,
-        damping: 10,
-        duration: 0.3
-      }
     }
   }
 
   return (
-    <div className={styles.wrapper} id="Bio">
       <div className={styles.container}>
+        <a id="Bio" className={styles.scrollReference}/>
         <div className={styles.bioGroup}>
-          <motion.div className={styles.photo}
+          <motion.div viewport={{once: true}}
+                      className={styles.photo}
                       initial={{opacity: 0, x: -10}}
-                      viewport={{once: true}}
                       whileInView={{
                         opacity: 1,
-                        x: 0,
                         transition: {
-                          duration: 0.7,
                           delay: 0.2,
-                        }
+                          duration: 0.7,
+                        },
+                        x: 0
                       }}/>
           <motion.div className={styles.bio}>
 
@@ -91,23 +92,23 @@ export function BioSection() {
           {
             buttons.map((el, i) => {
               return <motion.button
-                style={{position: "relative"}}
                 key={el.text}
+                initial="normal"
+                variants={button}
+                whileHover="hovered"
+                style={{position: "relative"}}
+                onClick={() => router.push(el.href)}
                 animate={{
                   backgroundColor: "var(--theme-focal)",
                 }}
-                variants={button}
-                initial="normal"
-                whileHover="hovered"
-                onClick={() => router.push(el.href)}
               >
                 {el.text}
                 <motion.div
+                  variants={buttonIcon}
                   style={{
                     position: "absolute",
                     right: "30px",
                   }}
-                  variants={buttonIcon}
                 >
                   <Icon className={styles.icon} path={mdiArrowDownRightBold}/>
                 </motion.div>
@@ -120,6 +121,5 @@ export function BioSection() {
          Hi there! I am  a software developer who loves building. Check out my <Link href="#Portfolio">portfolio</Link> to see what I can do. And hit me up at through any of these <Link href="#Contact">channels</Link>!
         </div>
       </div>
-    </div>
   )
 }

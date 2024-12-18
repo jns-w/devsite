@@ -1,14 +1,48 @@
 @import "@/styles/main";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-
 }
 
 :root {
+  /** Shadows */
+  --shadow: 0 1px 1px hsl(0deg 0% 0% / 4.5%),
+  0 2px 2px hsl(0deg 0% 0% / 3.5%),
+  0 4px 4px hsl(0deg 0% 0% / 3.5%),
+  0 10px 10px hsl(0deg 0% 0% / 4.5%),
+  0 20px 20px hsl(0deg 0% 0% / 4.5%);
+  --shadow-sm: 0 1px 1px hsl(0deg 0% 0% / 3.5%),
+  0 2px 2px hsl(0deg 0% 0% / 3.5%),
+  0 4px 4px hsl(0deg 0% 0% / 3.5%),
+  0 6px 6px hsl(0deg 0% 0% / 1.5%),
+  0 8px 8px hsl(0deg 0% 0% / 0.5%);
   @include spread-map($theme-map-light);
+
+
+  --max-width: 1150px;
+  --global-padding: 24px;
+
+
+  @include media(medium) {
+    --global-padding: 16px;
+    --max-width: 920px;
+  }
+
+  @include media(tablet) {
+    --global-padding: 16px;
+    --max-width: 650px;
+  }
+
+  @include media(mobile) {
+    --global-padding: 12px;
+    --max-width: 400px;
+  }
 }
 
 html[data-theme="light"] {
@@ -18,12 +52,6 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   @include spread-map($theme-map-dark);
 }
-
-//@media (prefers-color-scheme: dark) {
-//  :root {
-//    --bg: #1c1c1c;
-//  }
-//}
 
 html, body {
   animation: fadeInAnimation ease 600ms 200ms;
@@ -38,10 +66,6 @@ html, body {
   overflow: hidden;
 }
 
-@include for-phone-only() {
-  html, body {
-  }
-}
 
 * {
   box-sizing: border-box;

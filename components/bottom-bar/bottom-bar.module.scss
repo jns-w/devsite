@@ -1,0 +1,55 @@
+@import "@/styles/main";
+
+.bottomBarWrapper {
+  z-index: 5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+
+  .bottomBarContainer {
+    position: absolute;
+    bottom: -100px;
+    transition: bottom 0.2s ease-out;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .7);
+    border: whitesmoke solid 1px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(5px);
+
+    nav {
+      ul {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        color: var(--theme-text-color);
+        font-weight: 600;
+        font-size: 14px;
+      }
+    }
+
+    @include media(tablet) {
+      bottom: 20px;
+    }
+  }
+
+  .goToTopBtn {
+    position: absolute;
+    bottom: -100px;
+    right: 20px;
+    transition: bottom 0.2s ease-out;
+    background: rgba(255, 255, 255, .7);
+    border: whitesmoke solid 1px;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 25px;
+
+    @include media(tablet) {
+      bottom: 25px;
+    }
+  }
+}

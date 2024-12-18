@@ -1,3 +1,6 @@
+/* eslint-disable */
+/** disable eslint for this file to maintain order of data */
+
 export type PortfolioLink = {
   type: "Demo" | "Code" | "Live",
   href: string
@@ -12,7 +15,6 @@ export type Portfolio = {
   tags: string[],
   links: PortfolioLink[]
 }
-
 
 export const portfolios: Portfolio[] = [
   {
@@ -106,19 +108,19 @@ export const portfolios: Portfolio[] = [
     content: ``
   },
   {
-    name: "Dodgeblob",
-    description: "Interactive game in Javascript",
-    slug: "dodgeblob",
+    name: "Devsite",
+    description: "This portfolio site 🙂",
+    slug: "devsite",
     type: "Frontend Web",
-    tags: ["Javascript", "Jquery"],
+    tags: ["Typescript", "React", "ThreeJS", "React Three Fibre", "Sass"],
     links: [
       {
-        type: "Demo",
-        href: "https://dodgeblob.jonaswong.dev"
+        type: "Live",
+        href: "https://jonaswong.dev"
       },
       {
         type: "Code",
-        href: "https://github.com/jns-w/dodgeblob",
+        href: "https://github.com/jns-w/devsite",
       },
     ],
     content: ""

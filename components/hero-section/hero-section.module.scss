@@ -1,97 +1,101 @@
-.wrapper {
-  width: 100%;
-}
+@import "@/styles/main";
 
 .container {
   display: flex;
-  padding-top: 120px;
+  margin-top: 150px;
   align-items: center;
   justify-content: center;
   width: 100%;
-}
+  max-width: var(--max-width);
 
-.artworkContainer {
-  //border: #b05444 solid 1px;
-  //top: 100px;
-  display: flex;
-  justify-content: center;
-  height: 400px;
-  width: 100%;
-
-  //background-color: var(--theme-mild-backing);
-  border-radius: 20px;
-  margin-left: 100px;
-
-  @media (max-width: 800px) {
-    margin-left: 0;
-    //border: #b05444 1px solid;
-    width: auto;
+  .artworkContainer {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
   }
-}
 
-//.artwork {
-//  width: 1200px;
-//  height: 100%;
-//}
+  .heroTextContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
 
-.heroTextContainer {
-  //position: absolute;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-}
+  .heroText {
+    z-index: 2;
+    position: relative;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: var(--theme-text-color);
+    padding: 0;
+    text-align: justify;
+    //overflow-wrap: break-word;
 
-.heroText {
-  z-index: 2;
-  position: relative;
-  font-size: 50px;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  line-height: 1;
-  color: var(--theme-text-color);
-  margin-left: 120px;
-  padding: 0;
-  text-align: justify;
-  overflow-wrap: normal;
+    span {
+      //color: #f6f5f1;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(
+                      to right,
+                      var(--theme-text-color) 15%,
+                      var(--theme-accent) 70%
+      );
 
-  p {
-    //color: #f6f5f1;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(
-                    to right,
-                    var(--theme-text-color) 15%,
-                    var(--theme-accent) 70%
-    );
+      &::before {
+        //background-color: #2a2828;
+        position: absolute;
+        content: "";
+        height: 45px;
+        width: 100%;
+        z-index: -1;
+        top: 57px;
+        transform: translate(-8px, 4px);
+      }
 
-    &::before {
-      //background-color: #2a2828;
-      position: absolute;
-      content: "";
-      height: 45px;
-      width: 100%;
-      z-index: -1;
-      top: 57px;
-      transform: translate(-8px, 4px);
+      overflow: hidden;
+      border-right: .15em solid var(--theme-accent);
+      //white-space: nowrap;
+      //margin: 0 auto;
+      padding-right: 8px;
+      //animation: typing 2s steps(30, end),
+      animation: blink-caret .75s step-end infinite;
     }
 
-    overflow: hidden;
-    border-right: .15em solid var(--theme-accent);
-    white-space: nowrap;
-    //margin: 0 auto;
-    padding-right: 8px;
-    animation: typing 2s steps(30, end),
-    blink-caret .75s step-end infinite;
   }
 
-  @media (max-width: 800px) {
-    font-size: 32px;
-    margin-left: 0;
+  .box {
+    border: #b05444 solid 1px;
+    width: 1024px;
+    height: 1024px;
   }
+
+
+  .backdropWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media(tablet) {
+    margin-top: 80px;
+
+    .heroTextContainer {
+      justify-content: center;
+    }
+    .heroText {
+      text-align: center;
+        font-size: 36px;
+    }
+  }
+
 }
+
 
 @keyframes typing {
   from {
@@ -109,24 +113,4 @@
   50% {
     border-color: var(--theme-accent);
   }
-}
-
-.box {
-  border: #b05444 solid 1px;
-  width: 1024px;
-  height: 1024px;
-}
-
-//.canvas {
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  width: 100%;
-//  height: 100%;
-//}
-
-.backdropWrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }

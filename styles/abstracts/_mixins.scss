@@ -1,17 +1,57 @@
-@mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
-}
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
-}
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
-}
-@mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
-}
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
+@mixin media($breakpoint) {
+  @if $breakpoint == mobile-xs {
+    @media (width <= 320px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile-s {
+    @media (width <= 375px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (width <= 464px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media (width <= 765px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small {
+    @media (width <= 984px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == medium {
+    @media (width <= 1248px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == standard {
+    @media (width >= 1248px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large {
+    @media (width > 1500px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == x-large {
+    @media (width >= 2560px) {
+      @content;
+    }
+  }
 }
 
 @mixin fade-in {

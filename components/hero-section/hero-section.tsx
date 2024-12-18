@@ -1,17 +1,16 @@
 "use client"
-import styles from './hero-section.module.scss';
-import {archivo} from "@/styles/fonts";
-import {motion} from "framer-motion";
-import {lazy, Suspense, useRef} from "react";
-import GpgpuScene from "@/components/hero-section/particles/gpgpu/Gpgpu";
+import GpgpuScene from "@/components/hero-section/particles/gpgpu/Gpgpu"
+import { archivo } from "@/styles/fonts"
+import { motion } from "framer-motion"
+import { useRef } from "react"
+
+import styles from "./hero-section.module.scss"
 
 export function HeroSection() {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <Artwork/>
-        <BackgroundArt/>
-      </div>
+    <div className={styles.container}>
+      <Artwork />
+      <BackgroundArt />
     </div>
   )
 }
@@ -20,17 +19,17 @@ function Artwork() {
   const ref = useRef(null)
 
   return (
-    <div className={styles.artworkContainer} ref={ref}>
+    <div ref={ref} className={styles.artworkContainer}>
       <motion.div
-        className={styles.heroTextContainer}
         id="Hero"
+        className={styles.heroTextContainer}
       >
         <h1 className={`
         ${archivo.className} 
         ${styles.heroText}`}>
           Hi I&#39;m Jonas and I&#39;m a
-          <br/>
-          <p>Full Stack Software Developer.</p>
+          <br />
+          <p>Full Stack <span> Software Developer.</span></p>
         </h1>
       </motion.div>
     </div>
@@ -45,7 +44,7 @@ function BackgroundArt() {
       {/*<GradientScene/>*/}
       {/*<WavesScene/>*/}
       {/*<PointsScene/>*/}
-        <GpgpuScene/>
+      <GpgpuScene />
       {/*<AevumCircle/>*/}
     </div>
   )

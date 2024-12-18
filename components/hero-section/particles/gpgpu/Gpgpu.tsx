@@ -1,26 +1,25 @@
-import {MutableRefObject, useEffect, useMemo, useRef, useState} from "react";
-import './RenderMaterial'
-import * as THREE from "three";
-import {Canvas, useFrame, useLoader, useThree} from "@react-three/fiber";
-import {GPUComputationRenderer} from "three/examples/jsm/misc/GPUComputationRenderer";
 import {
   getSphereTexture,
   getStartingTexture,
   getVelocityTexture
 } from "@/components/hero-section/particles/gpgpu/getDataTexture";
 
+import './RenderMaterial'
+
+import {GPUComputationRenderer} from "three/examples/jsm/misc/GPUComputationRenderer";
 // @ts-ignore
 import simFragmentPosition from "!!raw-loader!./shaders/simFragmentPosition.glsl";
-
 // @ts-ignore
 import simFragmentVelocity from "!!raw-loader!./shaders/simFragmentVelocity.glsl";
-
-// @ts-ignore
-import vertexShader from "!!raw-loader!./vertexShader.glsl";
+import {MutableRefObject, useEffect, useMemo, useRef, useState} from "react";
+import {Canvas, useFrame, useLoader, useThree} from "@react-three/fiber";
 // @ts-ignore
 import fragmentShader from "!!raw-loader!./fragmentShader.glsl";
-import {useAtom} from "jotai";
+// @ts-ignore
+import vertexShader from "!!raw-loader!./vertexShader.glsl";
 import {themeAtom} from "@/atoms/ui";
+import * as THREE from "three";
+import {useAtom} from "jotai";
 
 function Gpgpu() {
   const [theme,] = useAtom(themeAtom)
@@ -38,10 +37,11 @@ function Gpgpu() {
   const {gl} = useThree()
 
 
-  const gpuCompute = new GPUComputationRenderer(200, 200, gl);
+  const gpuCompute = new GPUComputationRenderer(100, 100, gl);
 
   const pointsOnSphere = useMemo(() => getSphereTexture(COUNT, 2, 2), [])
-  const startPoints = useMemo(() => getStartingTexture(COUNT), [])
+  // const startPoints = useMemo(() => getStartingTexture(COUNT), [])
+  const startPoints = pointsOnSphere
 
   const positionVariable = gpuCompute.addVariable('uCurrentPosition', simFragmentPosition, startPoints)
   const velocityVariable = gpuCompute.addVariable('uCurrentVelocity', simFragmentVelocity, getVelocityTexture(COUNT))
@@ -82,13 +82,13 @@ function Gpgpu() {
   }, [COUNT])
 
   const uniforms = useMemo(() => ({
-    uPosition: {value: startPoints},
-    uCurrentPosition: {value: startPoints},
-    uOriginalPosition: {value: pointsOnSphere},
-    uMouse: {value: new THREE.Vector3(0, 0, 0)},
     u_ColorA: {value: new THREE.Color("#181818")},
     u_ColorB: {value: new THREE.Color("#ad1414")},
     u_Texture: {value: imgTex},
+    uCurrentPosition: {value: startPoints},
+    uMouse: {value: new THREE.Vector3(0, 0, 0)},
+    uOriginalPosition: {value: pointsOnSphere},
+    uPosition: {value: startPoints},
   }), [])
 
   velocityUniforms.uMouse = {value: uniforms.uMouse.value}
@@ -119,7 +119,7 @@ function Gpgpu() {
       uniforms.u_ColorA.value = new THREE.Color("#FFE486")
       uniforms.u_ColorB.value = new THREE.Color("#FEB3D9")
     }
-  }, [theme])
+  }, [theme, uniforms.u_ColorA, uniforms.u_ColorB])
 
 
   return (
@@ -127,27 +127,27 @@ function Gpgpu() {
       <points ref={pointsRef}>
         <bufferGeometry>
           <bufferAttribute
-            attach="attributes-position"
-            count={points.length / 3}
-            array={points}
             itemSize={3}
+            array={points}
+            count={points.length / 3}
+            attach="attributes-position"
           />
           <bufferAttribute
-            attach="attributes-reference"
-            count={reference.length / 2}
-            array={reference}
             itemSize={2}
+            array={reference}
+            count={reference.length / 2}
+            attach="attributes-reference"
           />
         </bufferGeometry>
         {/*@ts-ignore*/}
         <renderMaterial
-          transparent={true}
-          blending={THREE.AdditiveBlending}
           ref={renderMat}
           attach="material"
-          fragmentShader={fragmentShader}
-          vertexShader={vertexShader}
+          transparent={true}
           uniforms={uniforms}
+          vertexShader={vertexShader}
+          fragmentShader={fragmentShader}
+          blending={THREE.AdditiveBlending}
         />
       </points>
     </>
@@ -158,8 +158,8 @@ function Gpgpu() {
 export default function GpgpuScene() {
   return (
     <Canvas
-      resize={{scroll: false}}
       gl={{antialias: false}}
+      resize={{scroll: false}}
     >
       {/*<gridHelper args={[200, 50]} />*/}
       <Gpgpu/>

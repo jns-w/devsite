@@ -1,49 +1,50 @@
 "use client"
-import styles from './contact-section.module.scss';
-import {motion} from "framer-motion";
-import Icon from "@mdi/react";
-import {mdiEmailOutline, mdiGithub, mdiLinkedin, mdiTwitter} from "@mdi/js";
+import { mdiEmailOutline, mdiGithub, mdiLinkedin, mdiTwitter } from "@mdi/js"
+import { motion } from "framer-motion"
+import Icon from "@mdi/react"
+
+import styles from "./contact-section.module.scss"
 
 export function ContactSection() {
 
   const links = [
     {
-      name: "Mail",
       icon: mdiEmailOutline,
+      name: "Mail",
       url: "mailto:jns.w@icloud.com",
     },
     {
-      name: "LinkedIn",
       icon: mdiLinkedin,
+      name: "LinkedIn",
       url: "https://www.linkedin.com/in/jns-w",
     },
     {
-      name: "Github",
       icon: mdiGithub,
+      name: "Github",
       url: "https://github.com/jns-w",
     },
     {
-      name: "Twitter",
       icon: mdiTwitter,
+      name: "Twitter",
       url: "-",
-    }
+    },
   ]
 
   return (
-    <div className={styles.wrapper} id="Contact">
+    <div className={styles.contactSection}>
+      <a id="Contact" className="absolute top-[-100px]" />
       <div className={styles.headerContainer}>
         <h1>Let&apos;s connect</h1>
         <p>Feel free to reach out to me on any of the following platforms.</p>
-
       </div>
       <div className={styles.buttonsContainer}>
         {
           links.map(el => (
             <motion.a
               href={el.url}
+              key={el.name}
               target="_blank"
               rel="noopener noreferrer"
-              key={el.name}
               className={styles.button}
               animate={{
                 backgroundColor: "var(--theme-focal)",
@@ -52,7 +53,7 @@ export function ContactSection() {
                 backgroundColor: "var(--theme-accent)",
               }}
             >
-              <Icon className={styles.icon} path={el.icon}/>
+              <Icon path={el.icon} className={styles.icon} />
               {el.name}
             </motion.a>
           ))
