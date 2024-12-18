@@ -12,8 +12,8 @@
     position: absolute;
     bottom: -100px;
     padding: 10px 20px;
-    background: rgb(255 255 255 / 70%);
-    border: whitesmoke solid 1px;
+    background: rgb(var(--theme-bg) / 70%);
+    border: var(--theme-card-border);
     border-radius: 25px;
     box-shadow: var(--shadow-sm);
     backdrop-filter: blur(5px);
@@ -41,12 +41,13 @@
     right: 20px;
     bottom: -100px;
     padding: 10px;
-    background: rgb(255 255 255 / 70%);
-    border: whitesmoke solid 1px;
+    background: rgb(var(--theme-bg) / 70%);
+    border: var(--theme-card-border);
     border-radius: 25px;
     box-shadow: var(--shadow-sm);
     backdrop-filter: blur(5px);
     transition: bottom 0.2s ease-out;
+    color: var(--theme-text-color);
 
     @include media(tablet) {
       bottom: 25px;
