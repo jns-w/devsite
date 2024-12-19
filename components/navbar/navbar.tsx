@@ -1,5 +1,4 @@
 "use client"
-
 import { mdiEmailOutline, mdiGithub, mdiLinkedin } from "@mdi/js"
 import { AnimatePresence, motion } from "framer-motion"
 import { usePathname } from "next/navigation"
@@ -105,23 +104,6 @@ export function Navbar() {
           </a>
           <ThemeToggle />
         </div>
-
-        {/*<button*/}
-        {/*  // onClick={() => setBurgerMenuIsOpen(prevState => !prevState)}*/}
-        {/*  className={clsx(*/}
-        {/*    styles.hamburgerIcon,*/}
-        {/*    burgerMenuIsOpen && styles.opened,*/}
-        {/*  )}*/}
-        {/*  onClick={() => {*/}
-        {/*    // setBurgerMenuAnimation("open")*/}
-        {/*    setTimeout(() => {*/}
-        {/*      setBurgerMenuIsOpen(prevState => !prevState)*/}
-        {/*    }, 100)*/}
-        {/*  }}>*/}
-        {/*  <div className={styles.line} />*/}
-        {/*  <div className={styles.line} />*/}
-        {/*  <div className={styles.line} />*/}
-        {/*</button>*/}
       </div>
 
 
