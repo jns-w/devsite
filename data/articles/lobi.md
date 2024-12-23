@@ -1,5 +1,4 @@
 # Lobi: Streamlining the Badminton Game Experience
-Github: [github.com/jns-w/lobi](https://github.com/jns-w/lobi)\
 Demo site: [lobi.jonaswong.dev](https://lobi.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709782140/Devsite/lobi/lobi-main_qnctkr.png)
 

@@ -1,5 +1,4 @@
 # NotGPT: Blazing-Fast Autocomplete with Rust and In-Memory Trie
-Github: [https://github.com/jns-w/notgpt](https://github.com/jns-w/notgpt)\
 Demo site: [https://notgpt.jonaswong.dev](https://notgpt.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1706968350/Devsite/notgpt/Notgpt-main_p98wko.png)
 > #### Backend Stack:

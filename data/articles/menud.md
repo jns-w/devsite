@@ -1,5 +1,4 @@
 # Menu'd: A Seamless Mobile Web Menu Experience
-Github: [github.com/jns-w/menud](https://github.com/jns-w/menud)\
 Demo site: [menud.jonaswong.dev](https://menud.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709716896/Devsite/menu-d/Menud-main_er3jpg.png)
 > #### Frontend Stack:

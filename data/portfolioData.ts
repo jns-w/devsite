@@ -18,6 +18,23 @@ export type Portfolio = {
 
 export const portfolios: Portfolio[] = [
   {
+    name: "Ethplorer",
+    type: "Frontend Web",
+    description: "Responsive data display site with React and Tailwind",
+    slug: "ethplorer",
+    tags: ["React", "Typescript", "Tailwind", "Sass", "Recharts", "Motion"],
+    links: [
+      {
+        type: "Demo",
+        href: "https://ethplorer.jonaswong.dev",
+      },
+      // {
+      //   type: "Code",
+      //   href: "https://github.com/jns-w/table-dat"
+      // }
+    ],
+  },
+  {
     name: "Lobi",
     type: "Full Stack Web",
     description: "A badminton game facilitation site with Nextjs and Bun",
@@ -28,10 +45,10 @@ export const portfolios: Portfolio[] = [
         type: "Demo",
         href: "https://lobi.jonaswong.dev",
       },
-      {
-        type: "Code",
-        href: "https://github.com/jns-w/lobi",
-      }
+      // {
+      //   type: "Code",
+      //   href: "https://github.com/jns-w/lobi",
+      // }
     ],
     content: ``
   },
@@ -46,10 +63,10 @@ export const portfolios: Portfolio[] = [
         type: "Demo",
         href: "https://menud.jonaswong.dev",
       },
-      {
-        type: "Code",
-        href: "https://github.com/jns-w/menud",
-      },
+      // {
+      //   type: "Code",
+      //   href: "https://github.com/jns-w/menud",
+      // },
     ],
     content: ``
   },
@@ -67,28 +84,28 @@ export const portfolios: Portfolio[] = [
     ],
     content: ``
   },
-  {
-    name: "Blocks",
-    description: "Timer app that syncs across devices with React and Nodejs",
-    type: "Full Stack Web",
-    slug: "blocks",
-    tags: ["React", "Typescript", "Nextjs",  "Nodejs", "Express", "MongoDB", "Mongoose", "SocketIO", "Auth", "JWT", "Styled-components",  "Jotai"],
-    links: [
-      {
-        type: "Demo",
-        href: "https://blocks.jonaswong.dev",
-      },
-      {
-        type: "Code",
-        href: "https://github.com/jns-w/blocks",
-      },
-      {
-        type: "Live",
-        href: "https://blocks.wldspace.com"
-      }
-    ],
-    content: ``
-  },
+  // {
+  //   name: "Blocks",
+  //   description: "Timer app that syncs across devices with React and Nodejs",
+  //   type: "Full Stack Web",
+  //   slug: "blocks",
+  //   tags: ["React", "Typescript", "Nextjs",  "Nodejs", "Express", "MongoDB", "Mongoose", "SocketIO", "Auth", "JWT", "Styled-components",  "Jotai"],
+  //   links: [
+  //     {
+  //       type: "Demo",
+  //       href: "https://blocks.jonaswong.dev",
+  //     },
+  //     {
+  //       type: "Code",
+  //       href: "https://github.com/jns-w/blocks",
+  //     },
+  //     {
+  //       type: "Live",
+  //       href: "https://blocks.wldspace.com"
+  //     }
+  //   ],
+  //   content: ``
+  // },
   {
     name: "NotGPT",
     description: "Rust in-memory autocomplete implementation with Actix and React.",
@@ -100,10 +117,10 @@ export const portfolios: Portfolio[] = [
         type: "Demo",
         href: "https://notgpt.jonaswong.dev"
       },
-      {
-        type: "Code",
-        href: "https://github.com/jns-w/notgpt",
-      },
+      // {
+      //   type: "Code",
+      //   href: "https://github.com/jns-w/notgpt",
+      // },
     ],
     content: ``
   },
@@ -118,10 +135,10 @@ export const portfolios: Portfolio[] = [
         type: "Live",
         href: "https://jonaswong.dev"
       },
-      {
-        type: "Code",
-        href: "https://github.com/jns-w/devsite",
-      },
+      // {
+      //   type: "Code",
+      //   href: "https://github.com/jns-w/devsite",
+      // },
     ],
     content: ""
   },
