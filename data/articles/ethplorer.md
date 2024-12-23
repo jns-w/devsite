@@ -3,7 +3,7 @@
 Demo site: [ethplorer.jonaswong.dev](https://ethplorer.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1734931205/Devsite/Ethplorer/ethsplorer-thumb.png)
 
-Table Dat is a highly responsive web application created to help display large amount of data in a clean and organised manner that adapts to all kinds of display sizes.
+Ethplorer is a highly responsive web application created to help display large amount of data in a clean and organised manner that adapts to all kinds of display sizes.
 
 > #### Frontend Stack:
 > - React
