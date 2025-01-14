@@ -53,6 +53,18 @@ export const portfolios: Portfolio[] = [
     content: ``
   },
   {
+    name: "J-LLM",
+    type: "Full Stack Web",
+    description: "Full-Stack LLM query stream application",
+    slug: "j-llm",
+    tags: ["Bun", "Hono", "React", "Typescript", "Nextjs", "Motion", "Jotai", "Sass", "Tailwind"],
+    links: [
+      {
+        type: "Demo",
+        href: "https://jllm.jonaswong.dev",
+      }]
+  },
+  {
     name: "Menu'd",
     type: "Full Stack Web (mobile)",
     description: "Mobile first web menu app with React and Golang",
