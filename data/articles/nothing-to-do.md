@@ -38,4 +38,4 @@ Nothing To Do incorporates several intuitive interactions to streamline task man
 
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1709990458/Devsite/nothing-to-do/nothing-ui04_rkauhi.gif)
 
-Thank you for reading! Do check out my next project, [Blocks](/article/blocks), a real-time time tracker that is synced across devices.
+Thank you for reading! Do check out my next project, [NotGPT](/article/notgpt) to see my implementation of Google Search's autocompletion feature, done in Rustlang.

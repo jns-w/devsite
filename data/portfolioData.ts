@@ -50,7 +50,7 @@ export const portfolios: Portfolio[] = [
       //   href: "https://github.com/jns-w/lobi",
       // }
     ],
-    content: ``
+    content: ``,
   },
   {
     name: "J-LLM",
@@ -62,7 +62,7 @@ export const portfolios: Portfolio[] = [
       {
         type: "Demo",
         href: "https://jllm.jonaswong.dev",
-      }]
+      }],
   },
   {
     name: "Menu'd",
@@ -80,7 +80,7 @@ export const portfolios: Portfolio[] = [
       //   href: "https://github.com/jns-w/menud",
       // },
     ],
-    content: ``
+    content: ``,
   },
   {
     name: "Nothing To Do",
@@ -94,7 +94,7 @@ export const portfolios: Portfolio[] = [
         href: "https://github.com/jns-w/nothing-to-do",
       },
     ],
-    content: ``
+    content: ``,
   },
   // {
   //   name: "Blocks",
@@ -127,14 +127,14 @@ export const portfolios: Portfolio[] = [
     links: [
       {
         type: "Demo",
-        href: "https://notgpt.jonaswong.dev"
+        href: "https://notgpt.jonaswong.dev",
       },
       // {
       //   type: "Code",
       //   href: "https://github.com/jns-w/notgpt",
       // },
     ],
-    content: ``
+    content: ``,
   },
   {
     name: "Devsite",
@@ -145,13 +145,27 @@ export const portfolios: Portfolio[] = [
     links: [
       {
         type: "Live",
-        href: "https://jonaswong.dev"
+        href: "https://jonaswong.dev",
       },
       // {
       //   type: "Code",
       //   href: "https://github.com/jns-w/devsite",
       // },
     ],
-    content: ""
+    content: "",
+  },
+  {
+    name: "Dodgeblob",
+    description: "A simple game with JQuery",
+    slug: "dodgeblob",
+    type: "Frontend Web",
+    tags: ["JQuery", "CSS", "HTML"],
+    links: [
+      {
+        type: "Live",
+        href: "https://dodgeblob.jonaswong.dev",
+      },
+    ],
+    content: "",
   },
 ]
