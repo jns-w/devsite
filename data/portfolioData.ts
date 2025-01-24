@@ -136,24 +136,24 @@ export const portfolios: Portfolio[] = [
     ],
     content: ``,
   },
-  {
-    name: "Devsite",
-    description: "This portfolio site 🙂",
-    slug: "devsite",
-    type: "Frontend Web",
-    tags: ["Typescript", "React", "ThreeJS", "React Three Fibre", "Sass"],
-    links: [
-      {
-        type: "Live",
-        href: "https://jonaswong.dev",
-      },
-      // {
-      //   type: "Code",
-      //   href: "https://github.com/jns-w/devsite",
-      // },
-    ],
-    content: "",
-  },
+  // {
+  //   name: "Devsite",
+  //   description: "This portfolio site 🙂",
+  //   slug: "devsite",
+  //   type: "Frontend Web",
+  //   tags: ["Typescript", "React", "ThreeJS", "React Three Fibre", "Sass"],
+  //   links: [
+  //     {
+  //       type: "Live",
+  //       href: "https://jonaswong.dev",
+  //     },
+  //     // {
+  //     //   type: "Code",
+  //     //   href: "https://github.com/jns-w/devsite",
+  //     // },
+  //   ],
+  //   content: "",
+  // },
   {
     name: "Dodgeblob",
     description: "A simple game with JQuery",
