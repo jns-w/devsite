@@ -21,7 +21,7 @@ export function BioSection() {
       text: "Contact"
     },
     {
-      href: "/resume",
+      href: "/documents/Jonas_Resume.pdf",
       text: "Resume"
     }
   ]
