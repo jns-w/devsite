@@ -33,18 +33,18 @@ export function Navbar() {
         <nav className={styles.navigation}>
           <motion.ul className={`${styles.navigation} ${archivo.className}`}
           >
-            {
-              navLinks.map((item, index) => (
-                <li key={item.label}
-                    onMouseOut={() => setHoveredOn(-1)}
-                    onMouseOver={() => setHoveredOn(index)}
-                >
-                  <a
-                    href={path === "/" ? item.href : "/" + item.href}
+            <AnimatePresence>
+              {
+                navLinks.map((item, index) => (
+                  <li key={item.label}
+                      onMouseOut={() => setHoveredOn(-1)}
+                      onMouseOver={() => setHoveredOn(index)}
                   >
-                    {item.label}
-                  </a>
-                  <AnimatePresence>
+                    <a
+                      href={path === "/" ? item.href : "/" + item.href}
+                    >
+                      {item.label}
+                    </a>
                     {index === hoveredOn ? (
                         <motion.div
                           key={item.label}
@@ -79,10 +79,10 @@ export function Navbar() {
                         />)
                       : null
                     }
-                  </AnimatePresence>
-                </li>
-              ))
-            }
+                  </li>
+                ))
+              }
+            </AnimatePresence>
           </motion.ul>
         </nav>
 
