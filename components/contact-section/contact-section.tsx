@@ -26,7 +26,7 @@ export function ContactSection() {
     {
       icon: mdiTwitter,
       name: "Twitter",
-      url: "-",
+      url: "https://x.com/jnsw0",
     },
   ]
 
