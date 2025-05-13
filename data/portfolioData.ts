@@ -17,23 +17,23 @@ export type Portfolio = {
 }
 
 export const portfolios: Portfolio[] = [
-  // {
-  //   name: "Ethplorer",
-  //   type: "Frontend Web",
-  //   description: "Responsive data display site with React and Tailwind",
-  //   slug: "ethplorer",
-  //   tags: ["React", "Typescript", "Tailwind", "Sass", "Recharts", "Motion"],
-  //   links: [
-  //     {
-  //       type: "Demo",
-  //       href: "https://ethplorer.jonaswong.dev",
-  //     },
-  //     // {
-  //     //   type: "Code",
-  //     //   href: "https://github.com/jns-w/table-dat"
-  //     // }
-  //   ],
-  // },
+  {
+    name: "Ethplorer",
+    type: "Frontend Web",
+    description: "Responsive data display site with React and Tailwind",
+    slug: "ethplorer",
+    tags: ["React", "Typescript", "Tailwind", "Sass", "Recharts", "Motion"],
+    links: [
+      {
+        type: "Demo",
+        href: "https://ethplorer.jonaswong.dev",
+      },
+      // {
+      //   type: "Code",
+      //   href: "https://github.com/jns-w/table-dat"
+      // }
+    ],
+  },
   {
     name: "Lobi",
     type: "Full Stack Web",
