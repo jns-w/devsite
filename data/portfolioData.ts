@@ -18,20 +18,20 @@ export type Portfolio = {
 
 export const portfolios: Portfolio[] = [
   {
-    name: "Ethplorer",
+    name: "Table Dat",
     type: "Frontend Web",
     description: "Responsive data display site with React and Tailwind",
-    slug: "ethplorer",
+    slug: "table-dat",
     tags: ["React", "Typescript", "Tailwind", "Sass", "Recharts", "Motion"],
     links: [
       {
         type: "Demo",
-        href: "https://ethplorer.jonaswong.dev",
+        href: "https://tabledat.jonaswong.dev",
       },
-      // {
-      //   type: "Code",
-      //   href: "https://github.com/jns-w/table-dat"
-      // }
+      {
+        type: "Code",
+        href: "https://github.com/jns-w/table-dat",
+      },
     ],
   },
   {
@@ -45,10 +45,10 @@ export const portfolios: Portfolio[] = [
         type: "Demo",
         href: "https://lobi.jonaswong.dev",
       },
-      // {
-      //   type: "Code",
-      //   href: "https://github.com/jns-w/lobi",
-      // }
+      {
+        type: "Code",
+        href: "https://github.com/jns-w/lobi",
+      }
     ],
     content: ``,
   },
@@ -62,7 +62,13 @@ export const portfolios: Portfolio[] = [
       {
         type: "Demo",
         href: "https://jllm.jonaswong.dev",
-      }],
+      },
+      {
+        type: "Code",
+        href: "https://github.com/jns-w/jllm-client",
+      },
+    ],
+
   },
   {
     name: "Menu'd",
@@ -129,10 +135,10 @@ export const portfolios: Portfolio[] = [
         type: "Demo",
         href: "https://notgpt.jonaswong.dev",
       },
-      // {
-      //   type: "Code",
-      //   href: "https://github.com/jns-w/notgpt",
-      // },
+      {
+        type: "Code",
+        href: "https://github.com/jns-w/notgpt",
+      },
     ],
     content: ``,
   },

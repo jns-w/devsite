@@ -1,5 +1,7 @@
 # J-LLM: A Full-Stack LLM Query Stream Application
 
+Client Github: [github.com/jns-w/jllm-client](https://github.com/jns-w/jllm-client)\
+Server Github: [github.com/jns-w/jllm-server](https://github.com/jns-w/jllm-server)\
 Demo site: [jllm.jonaswong.dev](https://jllm.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1736856822/Devsite/j-llm/CleanShot_2025-01-14_at_20.11.37_u6ukpl.png)
 

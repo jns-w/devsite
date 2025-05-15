@@ -1,9 +1,10 @@
-# Ethplorer: Highly responsive site for data visualization
+# Table Dat: Highly responsive site for data visualization
 
-Demo site: [ethplorer.jonaswong.dev](https://ethplorer.jonaswong.dev)
+Github: [github.com/jns-w/table-dat](https://github.com/jns-w/table-dat)\
+Demo site: [tabledat.jonaswong.dev](https://tabledat.jonaswong.dev)
 ![](https://res.cloudinary.com/ds1s8ilcc/image/upload/v1734931205/Devsite/Ethplorer/ethsplorer-thumb.png)
 
-Ethplorer is a highly responsive web application created to help display large amount of data in a clean and organised manner that adapts to all kinds of display sizes.
+Table Dat is a highly responsive web application created to help display large amount of data in a clean and organised manner that adapts to all kinds of display sizes.
 
 > #### Frontend Stack:
 > - React
